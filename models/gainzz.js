@@ -33,24 +33,24 @@ const gainzzSchema = new Schema(
         type: {
           type: String,
           trim: true,
-          required: true,
+          default: '',
         },
         name: {
           type: String,
           trim: true,
-          required: true
+          default: '',
         },
         weight: {
           type: [Number],
-          required: true,
+          default: [],
         },
         sets: {
           type: [Number],
-          required: true,
+          default: [],
         },
         reps: {
           type: [Number],
-          required: true,
+          default: [],
         },  
       },
     ]
