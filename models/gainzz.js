@@ -51,9 +51,8 @@ const gainzzSchema = new Schema(
         reps: {
           type: [Number],
           required: true,
-        }
-        
-      }
+        },  
+      },
     ]
   }
 )
