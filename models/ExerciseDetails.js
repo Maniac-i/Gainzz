@@ -18,7 +18,15 @@ const exerciseDetailsSchema = new Schema({
   date: {
     type: Date,
     default: Date.now(),
-  }
+  },
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  },
+  exercise: {
+    type: Schema.Types.ObjectId,
+    ref: "Exercise",
+  },
 });
 
 const ExerciseDetails = mongoose.model('ExerciseDetails', exerciseDetailsSchema);

@@ -14,6 +14,10 @@ const exerciseSchema = new Schema({
     trim: true,
     default: '',
   },
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  },
 
   exerciseDetails: [
     {
