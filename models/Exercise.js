@@ -9,16 +9,13 @@ const exerciseSchema = new Schema({
     trim: true,
     default: '',
   },
+
   name: {
     type: String,
     trim: true,
     default: '',
   },
-  user: {
-    type: Schema.Types.ObjectId,
-    ref: "User",
-  },
-
+  
   exerciseDetails: [
     {
       type: Schema.Types.ObjectId,
