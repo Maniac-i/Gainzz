@@ -5,7 +5,7 @@ module.exports = {
   populate: function(req, res) {
     db.Exercise
       .find({})
-      .populate("exercises")
+      .populate("exerciseDetails")
       .then(dbResults => res.json(dbResults))
       .catch(err => res.status(404).json(err));
   },

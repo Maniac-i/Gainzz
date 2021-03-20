@@ -1,15 +1,18 @@
 const router = require("express").Router();
 const exerciseController = require("../../controllers/ExerciseController");
 
-router.route('/all')
+router.route('/')
   .post(exerciseController.create)
   .get(exerciseController.findAll);
 
-  router.route('/all/:id')
+router.route('/populate')
+  .get(exerciseController.populate);
+
+router.route('/:id')
   .put(exerciseController.update)
   .delete(exerciseController.delete);
 
-  router.route('/user/:userId')
+router.route('/user/:userId')
   .get(exerciseController.findAllByUserId)
 
   module.exports = router;

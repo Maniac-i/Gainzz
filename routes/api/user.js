@@ -3,10 +3,13 @@ const userController = require("../../controllers/UserController");
 
 router.route('/')
   .post(userController.createUser)
-  .get(userController.find);
+  .get(userController.findById);
 
 router.route('/:id')
-  .get(userController.populateExercises)
+  .get(userController.populateEverything);
+
+  router.route('/exercises/:id')
+  .get(userController.populateExercises);
   
 
   module.exports = router;

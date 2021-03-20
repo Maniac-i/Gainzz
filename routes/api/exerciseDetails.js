@@ -3,13 +3,13 @@ const exerciseDetailsController = require("../../controllers/ExerciseDetailsCont
 
 router.route('/')
   .post(exerciseDetailsController.create)
-  .get(exerciseDetailsController.findAll)
+  .get(exerciseDetailsController.findAll);
   
-  router.route('/:id')
-  .update(exerciseDetailsController.update)
-  .delete(exerciseDetailsController.delete)
+router.route('/:id')
+  .put(exerciseDetailsController.update)
+  .delete(exerciseDetailsController.delete);
 
-  router.route('/user/:userId')
+router.route('/user/:userId')
   .get(exerciseDetailsController.findAllByUserId)
 
   module.exports = router;

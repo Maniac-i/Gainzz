@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const userRoutes = require('./userAPI');
-const exerciseRoutes = require('./exerciseAPI');
-const exerciseDetailsRoutes = require('./exerciseDetailsAPI');
+const userRoutes = require('./user');
+const exerciseRoutes = require('./exercise');
+const exerciseDetailsRoutes = require('./exerciseDetails');
 
 router.use('/user', userRoutes);
 router.use('/exercise', exerciseRoutes);
-router.use('/exerciserDetails', exerciseDetailsRoutes);
+router.use('/exercisedetails', exerciseDetailsRoutes);
 
 module.exports = router;
