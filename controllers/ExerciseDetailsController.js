@@ -26,5 +26,12 @@ module.exports = {
     .find()
     .then(dbResults => res.json(dbResults))
     .catch(err => res.status(404).json(err));
+  },
+
+  delete: function(req, res) {
+    db.ExerciseDetails
+    .findByIdAndDelete(req.params.id)
+    .then(dbResults => res.json(dbResults))
+    .catch(err => res.status(404).json(err));
   }
 }

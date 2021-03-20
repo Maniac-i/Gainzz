@@ -9,7 +9,7 @@ module.exports = {
     .catch(err => res.status(404).json(err));
   },
 
-  populate: function(req, res) {
+  populateAll: function(req, res) {
    db.User
   .findOne({_id: req.params.id})
   .populate({
@@ -22,5 +22,12 @@ module.exports = {
   .catch(err => res.status(404).json(err));
 },
 
+  populateExercises: function(req, res) {
+    db.User
+  .findOne({_id: req.params.id})
+  .populate('exercises')
+  .then(dbResults => res.json(dbResults))
+  .catch(err => res.status(404).json(err));
+  },
 
 }

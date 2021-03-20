@@ -7,15 +7,21 @@ const exerciseSchema = new Schema({
   type: {
     type: String,
     trim: true,
-    default: '',
+    required: true,
   },
 
   name: {
     type: String,
     trim: true,
-    default: '',
+    required: true,
   },
-  
+
+  userId: {
+    type: String,
+    trim: true,
+    required: true,
+  },
+
   exerciseDetails: [
     {
       type: Schema.Types.ObjectId,
