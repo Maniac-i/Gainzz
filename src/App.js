@@ -1,8 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import Navbar from "./components/Navbar"; 
+import Navbar from "./components/Navbar";
+import { useAuthTokenStore } from "utils/auth";
 
 function App() {
+  useAuthTokenStore();
   return (
     <div className="App">
       <header className="App-header">
