@@ -5,10 +5,11 @@ router.route('/')
   .post(exerciseDetailsController.create)
   .get(exerciseDetailsController.findAll)
   
-  router.route(':id')
+  router.route('/:id')
   .update(exerciseDetailsController.update)
   .delete(exerciseDetailsController.delete)
 
   router.route('/user/:userId')
+  .get(exerciseDetailsController.findAllByUserId)
 
   module.exports = router;
