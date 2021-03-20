@@ -8,6 +8,13 @@ module.exports = {
     .then(dbResults => res.json(dbResults))
     .catch(err => res.status(404).json(err));
   },
+  
+  find: function(req, res) {
+    db.User.
+    find()
+    .then(dbResults => res.json(dbResults))
+    .catch(err => res.status(404).json(err));
+  },
 
   populateAll: function(req, res) {
    db.User

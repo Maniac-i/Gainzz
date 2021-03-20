@@ -33,5 +33,12 @@ module.exports = {
     .findByIdAndDelete(req.params.id)
     .then(dbResults => res.json(dbResults))
     .catch(err => res.status(404).json(err));
+  },
+
+  findAllId: function(req, res) {
+    db.ExerciseDetails
+    .find({ userId: res.user.id })
+    .then(dbResults => res.json(dbResults))
+    .catch(err => res.status(404).json(err));
   }
 }
