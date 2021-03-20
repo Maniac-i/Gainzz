@@ -7,7 +7,6 @@ router.route('/')
 
 router.route('/:id')
   .get(userController.populateExercises)
-  // .get(userController.findById)
-  // .put(userController.update);
+  
 
   module.exports = router;
