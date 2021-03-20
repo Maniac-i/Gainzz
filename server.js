@@ -22,11 +22,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/gainzz", {
 //can add API routes here before HTML routes
 app.use(routes);
 
-//HTML routes
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "./public/index.html"));
-});
-
 app.listen(PORT, () => {
     console.log(`API server is running on port ${PORT}!`);
 });
