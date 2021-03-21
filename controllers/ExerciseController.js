@@ -5,7 +5,7 @@ module.exports = {
   populate: function(req, res) {
     db.Exercise
       .find({})
-      .populate("exercises")
+      .populate("exerciseDetails")
       .then(dbResults => res.json(dbResults))
       .catch(err => res.status(404).json(err));
   },
@@ -16,6 +16,20 @@ module.exports = {
       .then(({ _id }) => db.User.findOneAndUpdate({}, { $push: { exercises: _id }}, {new: true }))
       .then(dbResults => res.json(dbResults))
       .catch(err => res.status(404).json(err));
+  },
+
+  findAll: function(req, res) {
+    db.Exercise
+    .find()
+    .then(dbResults => res.json(dbResults))
+    .catch(err => res.status(404).json(err));
+  },
+
+  findAllByUserId: function(req, res) {
+    db.Exercise
+    .find({ userId: req.params.userId })
+    .then(dbResults => res.json(dbResults))
+    .catch(err => res.status(404).json(err));
   },
 
   update: function(req, res) {
