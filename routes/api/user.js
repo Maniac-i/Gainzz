@@ -5,8 +5,8 @@ router.route('/')
   .post(userController.createUser)
   .get(userController.findById);
 
-router.route('/:id')
-  .get(userController.populateEverything);
+// router.route('/:id')
+//   .get(userController.populateEverything);
 
   router.route('/exercises/:id')
   .get(userController.populateExercises);

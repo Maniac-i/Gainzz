@@ -1,16 +1,18 @@
 //needed at top of file for user authentication
 require("dotenv").config();
 const passport = require("passport");
-app.use(passport.initialize());
-// Passport config
-passport.use( require("./config/jwtPassportStrategy") );
-
 const express = require("express");
-const path = require("path");
+// const path = require("path");
 const app = express();
-const PORT = process.env.PORT || 8080;
 const routes = require('./routes');
 const mongoose = require('mongoose');
+
+const PORT = process.env.PORT || 8080;
+
+app.use(passport.initialize());
+
+// Passport config
+passport.use( require("./config/jwtPassportStrategy") );
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
