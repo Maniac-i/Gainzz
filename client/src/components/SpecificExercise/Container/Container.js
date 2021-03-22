@@ -1,19 +1,24 @@
 import React, { Component } from "react";
-import SEbutton from '../Button/Button';
+import SEcard from '../Card/Card';
+import SEjumbotron from '../Jumbotron/Jumbotron';
 import API from '../../../utils/API';
 
 
 class Container extends Component {
   
-state = {
-  specificExercise: [],
-};
-
-componentDidMount() {
-  API.findAllByUserId()
+  
+  state = {
+    specificExercise: [],
+  };
+  
+  componentDidMount() {
+    //remove and replace with user id number once signup/login works
+  let id = "605611e09c471acaca66eac6";
+  
+  API.findAllByUserId(id)
     .then((res) => {
       console.log(res.data)
-      this.setState({ specificExercise: res })
+      this.setState({ specificExercise: res.data })
 
     })
     .catch(err => console.log(err));
@@ -22,8 +27,13 @@ componentDidMount() {
   render() {
     return(
     <div className='container'>
-      <SEbutton 
-      exercisename='bench press' />
+      <SEjumbotron />
+      {this.state.specificExercise.map((exercise) => (
+      <SEcard 
+      exercisename={exercise.name}
+      exercisetype={exercise.type}
+      userId={exercise.userId} />
+      ))}
     </div>
   );
 }

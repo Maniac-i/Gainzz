@@ -3,8 +3,8 @@ import axios from 'axios';
 
 const apiCalls = {
 
-  findAllByUserId: function() {
-    return axios.get("/api/exercise/")
+  findAllByUserId: function(id) {
+    return axios.get("/api/exercise/user/" + id)
   },
 };
 
