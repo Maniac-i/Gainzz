@@ -6,14 +6,16 @@ import API from "../../../utils/API";
 function Container() {
   const [exercises, setExercises] = useState([]);
 
+  //load all of the users exercises and store them with loadExercises
   useEffect(() => {
     loadExercises()
   }, [])
 
-  //remove and replace with user id number once signup/login works
-  let id = "605611e09c471acaca66eac6";
-
+  
   function loadExercises() {
+    //remove and replace with user id number once signup/login works
+    let id = "605611e09c471acaca66eac6";
+
     API.findAllByUserId(id)
       .then((res) => {
         console.log(res.data);
@@ -30,6 +32,7 @@ function Container() {
           exercisename={exercise.name}
           exercisetype={exercise.type}
           userId={exercise.userId}
+          key={exercise._id}
         />
       ))}
     </div>
