@@ -1,24 +1,15 @@
 
 import './App.css';
 import Navbar from "./components/Navbar"; 
-<<<<<<< HEAD
 import Container from './components/SpecificExercise/Container/Container';
 import ExerciseDetailsPage from './components/ExerciseDetailsPage/index';
-=======
-import SpecificExerciseContainer from './components/SpecificExercise/Container/Container';
->>>>>>> main
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <Navbar/>
-<<<<<<< HEAD
         <ExerciseDetailsPage/>
-=======
-        <SpecificExerciseContainer/>
-
->>>>>>> main
         
       </header>
     </div>
