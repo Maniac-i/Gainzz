@@ -1,16 +1,16 @@
 
 import './App.css';
 import Navbar from "./components/Navbar"; 
-import Container from './components/SpecificExercise/Container/Container';
+import SpecificExerciseContainer from './components/SpecificExercise/Container/Container';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <Navbar/>
-        <Container>
+        <SpecificExerciseContainer/>
 
-        </Container>
+        
       </header>
     </div>
   );
