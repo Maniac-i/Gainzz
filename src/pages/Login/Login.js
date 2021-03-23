@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 function LoginForm() {
-    const emailRef = useRef();
-    const passwordRef = useRef();
+    const [username, setUsername] = useState();
+    const [password, setPassword] = useState();
 
     // Get the helper login function from the `useLogin` hook.
     const login = useLogin();
@@ -10,8 +10,8 @@ function LoginForm() {
     const handleSubmit = async e => {
         e.preventDefault();
 
-        const email = emailRef.current.value;
-        const password = passwordRef.current.value;
+        const email = username.current.value;
+        const password = password.current.value;
 
         try {
 
