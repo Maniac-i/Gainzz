@@ -16,7 +16,7 @@ module.exports = {
     .catch(err => res.status(404).json(err));
   },
 
-  populateEverything: function(req, res) {
+  populateAll: function(req, res) {
    db.User
   .findOne({_id: req.params.id})
   .populate({

@@ -1,64 +1,11 @@
-import axios from "axios";
-
-class API {
-
-    axios;
-
-    constructor() {
-
-        this.axios = axios.create();
-
-    }
-
-    /**
-     * @param {String} name 
-     * @param {String} value 
-     */
-    setHeader( name, value ) {
-
-        if( value )
-
-            this.axios.defaults.headers.common[name] = value;
-
-        else
-
-            delete this.axios.defaults.headers.common[name];
-
-    }
-
-    /**
-     * @param {object} userData 
-     * @param {String} userData.email
-     * @param {String} userData.password
-     * 
-     * @returns {Promise}
-     */
-    register( userData ) {
-
-        return this.axios.post("/api/register", userData);
-
-    }
+import axios from 'axios';
 
 
-    /**
-     * @param {object} userData 
-     * @param {String} userData.email
-     * @param {String} userData.password
-     * 
-     * @returns {Promise}
-     */
-    login( userData ) {
+const apiCalls = {
 
-        return this.axios.post("/api/login", userData);
+  findAllByUserId: function(id) {
+    return axios.get("/api/exercise/user/" + id)
+  },
+};
 
-    }
-
-    authenticated() {
-
-        return this.axios.post("/api/authenticated");
-
-    }
-
-}
-
-export default new API();
+export default apiCalls;
