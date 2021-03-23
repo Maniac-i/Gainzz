@@ -1,7 +1,6 @@
 
 import './App.css';
 import Navbar from "./components/Navbar"; 
-import Container from './components/SpecificExercise/Container/Container';
 import ExerciseDetailsPage from './components/ExerciseDetailsPage/index';
 
 function App() {
