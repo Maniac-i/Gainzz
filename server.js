@@ -1,3 +1,10 @@
+//needed at top of file for user authentication
+require("dotenv").config();
+const passport = require("passport");
+app.use(passport.initialize());
+// Passport config
+passport.use( require("./config/jwtPassportStrategy") );
+
 const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -18,6 +25,8 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/gainzz", {
   useFindAndModify: false
 });
 
+//needed before "catch-all" route for authentication
+app.use( "/api", require("./routes/authentication") );
 //can add API routes here before HTML routes
 app.use(routes);
 

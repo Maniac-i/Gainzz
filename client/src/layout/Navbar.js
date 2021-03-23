@@ -12,13 +12,16 @@ const Navbar = () => {
                     <a className="js-scroll-trigger" href="#">Home</a>
                 </li>
                 <li className="navbar-fixed-top-item">
-                    <a className="js-scroll-trigger" href="#">Today</a>
-                </li>
-                <li className="navbar-fixed-top-item">
-                    <a className="js-scroll-trigger" href="#">Month</a>
-                </li>
-                <li className="navbar-fixed-top-item">
                     <a className="js-scroll-trigger" href="#">Workouts</a>
+                </li>
+                <li className="navbar-fixed-top-item">
+                    <a className="js-scroll-trigger" href="#">Schedule</a>
+                </li>
+                <li className="navbar-fixed-top-item">
+                    <a className="js-scroll-trigger" href="#">Previous Workouts</a>
+                </li>
+                <li className="navbar-fixed-top-item">
+                    <a className="js-scroll-trigger" href="#">Challenges</a>
                 </li>
             </ul>
         </nav>
