@@ -10,8 +10,8 @@ module.exports = {
   },
   
   findById: function(req, res) {
-    db.User.
-    findById(req.user.id)
+    db.User
+    .findById(req.user.id)
     .then(dbResults => res.json(dbResults))
     .catch(err => res.status(404).json(err));
   },

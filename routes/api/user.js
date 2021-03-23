@@ -6,7 +6,7 @@ router.route('/')
   .get(userController.findById);
 
 router.route('/:id')
-  .get(userController.populateEverything);
+  .get(userController.populateAll);
 
   router.route('/exercises/:id')
   .get(userController.populateExercises);
