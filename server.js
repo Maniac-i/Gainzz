@@ -1,7 +1,7 @@
 //needed at top of file for user authentication
 require("dotenv").config();
 const passport = require("passport");
-app.use(passport.initialize());
+
 // Passport config
 passport.use( require("./config/jwtPassportStrategy") );
 
@@ -13,6 +13,7 @@ const mongoose = require('mongoose');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(passport.initialize());
 
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
