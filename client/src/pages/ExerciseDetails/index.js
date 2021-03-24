@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import API from "../../utils/API";
 import Jumbotron from '../../components/Jumbotron/index';
+import DetailsTable from '../../components/DetailsTable/index';
+import TableRow from '../../components/TableRow/index'
 var dayjs = require('dayjs');
 
 function Container() {
@@ -21,14 +23,13 @@ function Container() {
 
     API.populateExerciseDetails(id)
       .then((res) => {
-        console.log(res.data)
+        
         let deets = res.data[0].exerciseDetails;
         let mostRecentDeet = deets[deets.length - 1];
 
         setDetail(mostRecentDeet);
         setAllDetails(deets);
-        console.log(mostRecentDeet);
-        console.log(deets);
+        
       })
   }
 
@@ -43,6 +44,16 @@ function Container() {
     <p className='card-text'>Sets: {detail.weight}</p>
   </div>
 </div>
+<br/>
+<DetailsTable>
+  {allDetails.map((deet) => (
+  <TableRow 
+  date={dayjs(detail.date).format('MM/DD/YYYY')}
+  sets={deet.sets}
+  reps={deet.reps}
+  weight={deet.weight}
+  />))}
+</DetailsTable>
 </div>
   )
 }
