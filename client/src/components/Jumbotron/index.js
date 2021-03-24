@@ -1,13 +1,13 @@
 import React from 'react';
 
-function SEjumbotron(props) {
+function Jumbotron(props) {
   return(
 <div className="jumbotron jumbotron-fluid">
   <div className="container">
-    <h1 className="display-4">ALL WORKOUTS</h1>
+    <h1 className="display-4">{props.title}</h1>
   </div>
 </div>
   );
 }
 
-export default SEjumbotron;
+export default Jumbotron;

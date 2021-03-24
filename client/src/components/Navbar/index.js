@@ -1,4 +1,5 @@
 import React from "react";
+import './style.css'
 
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
@@ -6,7 +7,7 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand">
                 <img src={`${process.env.PUBLIC_URL}/logo-blk.png`} width="150" height="50" alt="gainz logo" style={{opacity: "0.7"}}/>
               </a>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">

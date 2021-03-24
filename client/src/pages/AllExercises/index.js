@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import SEcard from "../Card/Card";
-import SEjumbotron from "../Jumbotron/Jumbotron";
-import API from "../../../utils/API";
+import ExerciseCard from "../../components/ExerciseCard/index";
+import Jumbotron from "../../components/Jumbotron/index";
+import API from "../../utils/API";
 
 function Container() {
   const [exercises, setExercises] = useState([]);
@@ -26,9 +26,9 @@ function Container() {
 
   return (
     <div className="container">
-      <SEjumbotron />
+      <Jumbotron title="All Exercises" />
       {exercises.map((exercise) => (
-        <SEcard
+        <ExerciseCard
           exercisename={exercise.name}
           exercisetype={exercise.type}
           userId={exercise.userId}
