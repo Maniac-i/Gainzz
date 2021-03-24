@@ -12,6 +12,10 @@ const apiCalls = {
   findOne: function(id) {
     return axios.get('api/exercisedetails/' + id)
   },
+
+  populateExerciseDetails: function(id) {
+      return axios.get('api/exercise/populate/' + id)
+  }
 };
 
 export default apiCalls;

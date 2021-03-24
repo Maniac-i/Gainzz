@@ -1,14 +1,14 @@
 
 import './App.css';
 import Navbar from "./components/Navbar"; 
-import ExerciseDetailsPage from './components/ExerciseDetailsPage/index';
+import ExerciseDetails from './pages/ExerciseDetails/index';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <Navbar/>
-        <ExerciseDetailsPage/>
+        <ExerciseDetails/>
         
       </header>
     </div>

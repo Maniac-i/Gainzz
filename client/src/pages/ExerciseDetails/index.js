@@ -6,12 +6,24 @@ var dayjs = require('dayjs');
 function Container() {
   
   const [details, setDetails] = useState([]);
+  const [allDetails, setAllDetails] = useState([]);
 
   const date = (dayjs(details.date).format('MM/DD/YYYY'));
 
   useEffect(() => {
     loadDetails()
+    findAllDetails()
   }, [])
+
+  function findAllDetails() {
+
+    let id = "60563480dd6d07d21c959117"
+
+    API.populateExerciseDetails(id)
+      .then((res) => {
+        console.log(res.data)
+      })
+  }
 
   function loadDetails() {
 
