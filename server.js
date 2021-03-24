@@ -1,6 +1,10 @@
 //needed at top of file for user authentication
 require("dotenv").config();
 const passport = require("passport");
+
+// Passport config
+passport.use( require("./config/jwtPassportStrategy") );
+
 const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -14,6 +18,7 @@ passport.use( require("./config/jwtPassportStrategy") );
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(passport.initialize());
 
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));

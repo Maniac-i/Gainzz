@@ -1,17 +1,20 @@
-
+import React from "react";
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import SignUp from "./pages/Signup/Signup";
+import SignIn from "./pages/SignIn/Signin";
 import './App.css';
-import Navbar from "./components/Navbar"; 
-import ExerciseDetails from './pages/ExerciseDetails/index';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Navbar/>
-        <ExerciseDetails/>
-        
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Switch>
+          <Route exact path="/" component={SignUp}/>
+          <Route exact path="/signin" component={SignIn}/>
+        </Switch>
+      </div>
+  </Router>
+
   );
 }
 
