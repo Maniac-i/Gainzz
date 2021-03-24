@@ -15,7 +15,6 @@ function Signup () {
                         </div>
                         <div className="card-body">
                             <img className="img-fluid max-width: 100%; height: auto;" src={`${process.env.PUBLIC_URL}/logo-blk.png`} alt=""/>
-                        <h5 className="card-title text-center"></h5>
                         <form className="form-signin">
                             <div className="form-label-group">
                             <input type="text" id="inputUserame" className="form-control" placeholder="Username" required autofocus/>
