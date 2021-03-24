@@ -1,6 +1,6 @@
-import { constant } from "async";
 import React, { useState, useEffect } from "react";
 import API from "../../utils/API";
+import Jumbotron from '../../components/Jumbotron/index';
 var dayjs = require('dayjs');
 
 function Container() {
@@ -26,6 +26,8 @@ function Container() {
   }
 
   return (
+    <div>
+    <Jumbotron title="Exercise Deets" />
     <div className="card text-center mx-auto">
   <div className="card-body bg-dark text-white">
     <h3>Date: {date}</h3>
@@ -33,6 +35,7 @@ function Container() {
     <p className='card-text'>Sets: {details.reps}</p>
     <p className='card-text'>Sets: {details.weight}</p>
   </div>
+</div>
 </div>
   )
 }
