@@ -9,15 +9,10 @@
     "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "bootstrap": "^4.6.0",
-<<<<<<< HEAD
-    "fastest-validator": "^1.10.1",
-    "mongoose": "^5.12.0",
-=======
     "dotenv": "^8.2.0",
     "fastest-validator": "^1.10.1",
     "jwt-decode": "^3.1.2",
     "mongoose": "^5.12.2",
->>>>>>> fc658c1ea29e6518af1b0856185f85ba2d1887b5
     "mongoose-type-email": "^1.1.2",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
