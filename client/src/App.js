@@ -3,8 +3,12 @@ import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import SignUp from "./pages/Signup/Signup";
 import SignIn from "./pages/SignIn/Signin";
 import './App.css';
+import { useAuthTokenStore } from "./utils/auth";
 
 function App() {
+
+  useAuthTokenStore();
+
   return (
     <Router>
       <div>
