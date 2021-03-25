@@ -35,7 +35,7 @@ class API {
      * @returns {Promise}
      */
     register( userData ) {
-
+      alert(userData)
         return this.axios.post("/api/user", userData);
 
     }

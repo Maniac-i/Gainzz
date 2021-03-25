@@ -47,24 +47,24 @@ function SignUpCard(props) {
                         <h1 className="card-title text-center">Sign up</h1>
                         <form className="form-signin">
                             <div className="form-label-group">
-                            <input type="text" ref={usernameRef} id="inputUserame" className="form-control" placeholder="Username" required autofocus/>
-                            <label for="inputUserame"></label>
+                            <input type="text" ref={usernameRef} id="inputUserame" className="form-control" placeholder="Username" required autoFocus/>
+                            <label htmlFor="inputUserame"></label>
                             </div>
             
                             <div className="form-label-group">
                             <input type="email" ref={emailRef} id="inputEmail" className="form-control" placeholder="Email address" required/>
-                            <label for="inputEmail"></label>
+                            <label htmlFor="inputEmail"></label>
                             </div>
                             
                             <hr/>
             
                             <div className="form-label-group">
                             <input type="password" ref={passwordRef} id="inputPassword" className="form-control" placeholder="Password" required/>
-                            <label for="inputPassword"></label>
+                            <label htmlFor="inputPassword"></label>
                             </div>
             
                             <button className="btn btn-lg btn-dark btn-block text-uppercase" 
-                            type="submit" onSubmit={handleSubmit}>Register</button>
+                            type="submit" onClick={handleSubmit}>Register</button>
                             <a className="d-block text-center mt-2 small" href="/signin">Sign In</a>
                         </form>
                         </div>
