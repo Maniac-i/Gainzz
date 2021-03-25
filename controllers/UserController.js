@@ -3,7 +3,6 @@ const db = require('../models');
 module.exports = {
 
   createUser: function(req, res) {
-    console.log(req.body.userData);
     db.User
     .create(req.body)
     .then(dbResults => res.json(dbResults))

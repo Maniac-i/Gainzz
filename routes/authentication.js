@@ -19,7 +19,7 @@ const { User } = require("../models");
 const jwtSign = util.promisify( jwt.sign );
 
 // Get the currently authenticated user
-router.post("/authenticated", authenticateUser, (req, res) => {
+router.post("/user/authenticated", authenticateUser, (req, res) => {
 
   res.json( req.user );
 
@@ -29,9 +29,9 @@ router.post("/authenticated", authenticateUser, (req, res) => {
  * Log in an existing user by signing and returning a secure JWT token
  * for the client application to store and include with requests.
  */
-router.post("/login", validateBodyWith( loginValidator ), async (req, res) => {
+router.post("/user/login", validateBodyWith( loginValidator ), async (req, res) => {
 
-  const { email, password } = req.body;
+  const { email, password, username } = req.body;
 
   try {
 
@@ -59,7 +59,8 @@ router.post("/login", validateBodyWith( loginValidator ), async (req, res) => {
 
     const payload = {
       id: secureUser._id,
-      email: secureUser.email
+      email: secureUser.email,
+      username: secureUser.username
     };
 
     // Create a signed JWT token to send back to the client for reauthentication.
@@ -90,12 +91,12 @@ router.post("/login", validateBodyWith( loginValidator ), async (req, res) => {
 /**
  * Creates a new user for authentication
  */
-router.post("/register", validateBodyWith( registerValidator ), async (req, res) => {
+router.post("/user/register", validateBodyWith( registerValidator ), async (req, res) => {
 
   try {
 
-    const { email, password } = req.body;
-
+    const { email, password, username } = req.body;
+    console.log("user:", req.body)
     const user = await User.findOne({ email });
 
     if (user) {
@@ -105,7 +106,8 @@ router.post("/register", validateBodyWith( registerValidator ), async (req, res)
 
     const newUser = new User({
       email,
-      password: await passwordHash( password )
+      password: await passwordHash( password ),
+      username
     });
 
     await newUser.save();

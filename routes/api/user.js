@@ -11,5 +11,13 @@ router.route('/:id')
   router.route('/exercises/:id')
   .get(userController.populateExercises);
   
+  router.route('/register')
+  .post(userController.createUser);
+
+  router.route('/login')
+  .post(userController.createUser);
+
+  router.route('/authenticated')
+  .post(userController.createUser);
 
   module.exports = router;
