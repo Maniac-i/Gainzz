@@ -31,6 +31,7 @@ function SignInCard(props) {
 
             // User has been successfully logged in and added to state. Perform any additional actions you need here such as redirecting to a new page.
                 console.log('logged in!')
+                //redirect user to home page after login
                 redirectHome();
         } catch(err) {
 

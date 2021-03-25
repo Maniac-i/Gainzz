@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useLogin, useAuthenticatedUser } from "../../utils/auth";
 import api from '../../utils/register-api';
-import { Redirect, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 
 
@@ -37,6 +37,7 @@ function SignUpCard(props) {
     
                 // User has been successfully registered, logged in and added to state. Perform any additional actions you need here such as redirecting to a new page.
                 console.log("I did it:", user);
+                //redirect user to home page after login
                 redirectHome();
 
             } catch(err) {
