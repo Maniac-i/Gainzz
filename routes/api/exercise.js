@@ -5,7 +5,7 @@ router.route('/')
   .post(exerciseController.create)
   .get(exerciseController.findAll);
 
-router.route('/populate')
+router.route('/populate/:id')
   .get(exerciseController.populate);
 
 router.route('/:id')
