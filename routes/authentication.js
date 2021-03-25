@@ -37,11 +37,11 @@ router.post("/user/login", validateBodyWith( loginValidator ), async (req, res) 
 
     const user =
       await User
-        .findOne({ email });
+        .findOne({ username });
 
     if (!user) {
       // User not found by email.
-      return res.status(404).json({ default: "Email or password is invalid." });
+      return res.status(404).json({ default: "User not found." });
     }
 
     const {
@@ -50,11 +50,12 @@ router.post("/user/login", validateBodyWith( loginValidator ), async (req, res) 
       ...secureUser
     } = user._doc;
 
+    console.log(password, encryptedPassword);
     const isMatch = await bcrypt.compare( password, encryptedPassword );
     
     if( !isMatch ) {
       // User's password is invalid.
-      return res.status(404).json({ default: "Email or password is invalid." });
+      return res.status(404).json({ default: "Password is invalid." });
     }
 
     const payload = {

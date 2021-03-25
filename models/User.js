@@ -9,13 +9,12 @@ const userSchema = new Schema(
       username: {
         type: String,
         trim: true,
-        required: true
+        
       },
 
       email: {
         type: mongoose.SchemaTypes.Email,
         trim: true,
-        required: true
       },
 
       password: {

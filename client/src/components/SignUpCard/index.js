@@ -1,10 +1,17 @@
 import React, { useRef } from 'react';
-import { useLogin } from "../../utils/auth";
+import { useLogin, useAuthenticatedUser } from "../../utils/auth";
 import api from '../../utils/register-api';
+import { Redirect, useHistory } from 'react-router-dom';
 
 
 
 function SignUpCard(props) {
+
+        const history = useHistory();
+
+        function redirectHome() {
+            history.push("/home");
+        }
 
         const emailRef = useRef();
         const passwordRef = useRef();
@@ -29,14 +36,18 @@ function SignUpCard(props) {
                 await login({ email, password, username });
     
                 // User has been successfully registered, logged in and added to state. Perform any additional actions you need here such as redirecting to a new page.
-    
+                console.log("I did it:", user);
+                redirectHome();
+
             } catch(err) {
     
                  // Handle error responses from the API. This will include
                  if( err.response && err.response.data ) console.log(err.response.data);
     
             }
+
         }
+        const user = useAuthenticatedUser();
 
     return(
         <div className="card card-signin flex-row my-5">
