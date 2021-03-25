@@ -6,16 +6,15 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema(
   {
-      userName: {
+      username: {
         type: String,
         trim: true,
-        required: true
+        
       },
 
       email: {
         type: mongoose.SchemaTypes.Email,
         trim: true,
-        required: true
       },
 
       password: {

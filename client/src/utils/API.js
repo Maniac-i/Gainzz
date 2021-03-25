@@ -13,9 +13,11 @@ const apiCalls = {
     return axios.get('api/exercisedetails/' + id)
   },
 
+  //populates all the details for one exercise
   populateExerciseDetails: function(id) {
       return axios.get('api/exercise/populate/' + id)
-  }
+  },
+
 };
 
 export default apiCalls;
