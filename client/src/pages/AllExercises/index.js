@@ -11,7 +11,6 @@ function Container() {
     loadExercises()
   }, [])
 
-  
   function loadExercises() {
     //remove and replace with user id number once signup/login works
     let id = "605611e09c471acaca66eac6";
