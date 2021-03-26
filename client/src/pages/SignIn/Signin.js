@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from '../../components/Navbar';
 import SignInCard from '../../components/SignInCard';
 import { Container, Row, Col } from "../../components/Grid"
 
@@ -7,7 +6,6 @@ function Signin () {
 
     return (
         <div>
-            <Navbar/>
             <Container>
                 <Row>
                     <Col size="lg-12 xl-12 mx-auto">
