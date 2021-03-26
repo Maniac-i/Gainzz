@@ -1,10 +1,11 @@
 import React from 'react';
+import "./style.css"
 
 function Jumbotron(props) {
   return(
 <div className="jumbotron jumbotron-fluid">
   <div className="container">
-    <h1 className="display-4">{props.title}</h1>
+    <img className="mx-auto d-block img-fluid" src={props.src}  style={{opacity: "0.9"}} alt="jumbotron H1"/>
   </div>
 </div>
   );

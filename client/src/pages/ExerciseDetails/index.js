@@ -3,6 +3,7 @@ import API from "../../utils/API";
 import Jumbotron from '../../components/Jumbotron/index';
 import DetailsTable from '../../components/DetailsTable/index';
 import TableRow from '../../components/TableRow/index'
+import Navbar from '../../components/Navbar';
 var dayjs = require('dayjs');
 
 function Container() {
@@ -35,6 +36,7 @@ function Container() {
 
   return (
     <div>
+    <Navbar/>      
     <Jumbotron title="Exercise Deets" />
     <div className="card text-center mx-auto">
   <div className="card-body bg-dark text-white">
