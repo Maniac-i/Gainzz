@@ -18,7 +18,7 @@ function Musclegroups() {
           <Row>
             <Col size="lg-12 xl-12 mx-auto">
                 <HomepageBtn 
-                link="muscle"
+                link="workouts"
                 title="All Muscle Groups"
                 style={{ 
                         background: `url(${process.env.PUBLIC_URL}/cardimgs/cardMuscle.jpg)`, 
@@ -30,7 +30,7 @@ function Musclegroups() {
           <Row>
             <Col size="lg-12 xl-12 mx-auto">
                 <HomepageBtn 
-                link="muscle"
+                link="workouts"
                 title="Chest"
                 style={{ 
                         background: `url(${process.env.PUBLIC_URL}/cardimgs/cardMuscle.jpg`, 
@@ -42,7 +42,7 @@ function Musclegroups() {
           <Row> 
             <Col size="lg-12 xl-12 mx-auto">
                 <HomepageBtn
-                link="muscle" 
+                link="workouts" 
                 title="Back"
                 style={{ 
                     background: `url(${process.env.PUBLIC_URL}/cardimgs/cardMuscle.jpg)`, 
@@ -54,7 +54,7 @@ function Musclegroups() {
           <Row> 
             <Col size="lg-12 xl-12 mx-auto">
                 <HomepageBtn
-                link="muscle" 
+                link="workouts" 
                 title="Biceps"
                 style={{ 
                     background: `url(${process.env.PUBLIC_URL}/cardimgs/cardMuscle.jpg)`, 
@@ -66,7 +66,7 @@ function Musclegroups() {
           <Row> 
             <Col size="lg-12 xl-12 mx-auto">
                 <HomepageBtn
-                link="muscle" 
+                link="workouts" 
                 title="Triceps"
                 style={{ 
                     background: `url(${process.env.PUBLIC_URL}/cardimgs/cardMuscle.jpg)`, 
@@ -78,7 +78,7 @@ function Musclegroups() {
           <Row> 
             <Col size="lg-12 xl-12 mx-auto">
                 <HomepageBtn
-                link="muscle" 
+                link="workouts" 
                 title="Shoulders"
                 style={{ 
                     background: `url(${process.env.PUBLIC_URL}/cardimgs/cardMuscle.jpg)`, 
@@ -90,7 +90,7 @@ function Musclegroups() {
           <Row> 
             <Col size="lg-12 xl-12 mx-auto">
                 <HomepageBtn
-                link="muscle" 
+                link="workouts" 
                 title="Legs"
                 style={{ 
                     background: `url(${process.env.PUBLIC_URL}/cardimgs/cardMuscle.jpg)`, 
@@ -102,7 +102,7 @@ function Musclegroups() {
           <Row> 
             <Col size="lg-12 xl-12 mx-auto">
                 <HomepageBtn
-                link="muscle" 
+                link="workouts" 
                 title="Core"
                 style={{ 
                     background: `url(${process.env.PUBLIC_URL}/cardimgs/cardMuscle.jpg)`, 
