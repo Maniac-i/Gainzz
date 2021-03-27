@@ -2,7 +2,7 @@ import React from "react";
 import {Col, Row,Container } from '../../components/Grid'
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
-import HomepageBtn from '../../components/HomepageBtn';
+import CardLink from '../../components/CardLink';
 import { useAuthenticatedUser } from '../../utils/auth';
 
 function Musclegroups() {
@@ -17,7 +17,7 @@ function Musclegroups() {
 
           <Row>
             <Col size="lg-12 xl-12 mx-auto">
-                <HomepageBtn 
+                <CardLink 
                 link="muscle"
                 title="All Muscle Groups"
                 style={{ 
@@ -29,7 +29,7 @@ function Musclegroups() {
   
           <Row>
             <Col size="lg-12 xl-12 mx-auto">
-                <HomepageBtn 
+                <CardLink 
                 link="muscle"
                 title="Chest"
                 style={{ 
@@ -41,7 +41,7 @@ function Musclegroups() {
   
           <Row> 
             <Col size="lg-12 xl-12 mx-auto">
-                <HomepageBtn
+                <CardLink
                 link="muscle" 
                 title="Back"
                 style={{ 
@@ -53,7 +53,7 @@ function Musclegroups() {
 
           <Row> 
             <Col size="lg-12 xl-12 mx-auto">
-                <HomepageBtn
+                <CardLink
                 link="muscle" 
                 title="Biceps"
                 style={{ 
@@ -65,7 +65,7 @@ function Musclegroups() {
 
           <Row> 
             <Col size="lg-12 xl-12 mx-auto">
-                <HomepageBtn
+                <CardLink
                 link="muscle" 
                 title="Triceps"
                 style={{ 
@@ -77,7 +77,7 @@ function Musclegroups() {
 
           <Row> 
             <Col size="lg-12 xl-12 mx-auto">
-                <HomepageBtn
+                <CardLink
                 link="muscle" 
                 title="Shoulders"
                 style={{ 
@@ -89,7 +89,7 @@ function Musclegroups() {
 
           <Row> 
             <Col size="lg-12 xl-12 mx-auto">
-                <HomepageBtn
+                <CardLink
                 link="muscle" 
                 title="Legs"
                 style={{ 
@@ -101,7 +101,7 @@ function Musclegroups() {
 
           <Row> 
             <Col size="lg-12 xl-12 mx-auto">
-                <HomepageBtn
+                <CardLink
                 link="muscle" 
                 title="Core"
                 style={{ 

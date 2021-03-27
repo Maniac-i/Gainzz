@@ -13,7 +13,7 @@ function AddExerciseForm(props) {
 
   function redirectHome() {
     //change to the allexercise route
-    history.push("/allexercises");
+    history.push("/workouts");
   }
 
   function onChange(e) {

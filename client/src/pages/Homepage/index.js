@@ -12,7 +12,7 @@ function Homepage() {
         <Row>
         <Col size="lg-12 xl-12 mx-auto">
           <CardLink 
-          link="allexercises"
+          link="workouts"
           title="Workouts"
           style={{ 
               background: `url(${process.env.PUBLIC_URL}/cardimgs/cardWorkout.jpg)`, 
@@ -24,7 +24,7 @@ function Homepage() {
         <Row>
         <Col size="lg-12 xl-12 mx-auto">
         <CardLink 
-        link="addexercises"
+        link="create"
         title="Create Exercise"
         style={{ 
               background: `url(${process.env.PUBLIC_URL}/cardimgs/cardCreate.jpg)`, 
