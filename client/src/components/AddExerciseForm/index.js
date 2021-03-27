@@ -37,6 +37,7 @@ function AddExerciseForm(props) {
     .catch((err) => console.log(err))
   };
 
+
   return (
     <div className="card card-addexe ">
       <div className="card-body">

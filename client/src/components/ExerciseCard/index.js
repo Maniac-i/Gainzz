@@ -8,7 +8,7 @@ function SEbutton(props) {
   <div className="card-body text-white border-0">
     <h3>{props.exercisename}</h3>
     <p className='card-text'>Body Part: {props.exercisetype}</p>
-    <div className="btn btn-dark">View</div>
+    {props.children}
   </div>
 </div>
 
