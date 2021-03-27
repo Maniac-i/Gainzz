@@ -3,9 +3,12 @@ import {Col, Row,Container } from '../../components/Grid'
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import HomepageBtn from '../../components/HomepageBtn';
+import { useAuthenticatedUser } from '../../utils/auth';
 
 function Homepage() {
   
+  const user = useAuthenticatedUser();
+  console.log(user);
 
   return (
     <div className="container">
