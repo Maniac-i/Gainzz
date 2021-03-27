@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import { useAuthenticatedUser } from '../../utils/auth';
 import { Link } from 'react-router-dom';
 import API from '../../utils/API';
@@ -83,8 +83,10 @@ function AddExerciseForm(props) {
           >
             Add Exercise
           </button>
-          <Link className="d-block text-center mt-2 small" to="/home">
-            Return
+
+          <Link className="d-block text-center mt-2 small" to="/workouts">
+            All Exercises
+
           </Link>
         </form>
       </div>
