@@ -1,5 +1,6 @@
 const db = require("../models");
 
+
 module.exports = {
 
   populate: function(req, res) {
@@ -11,6 +12,8 @@ module.exports = {
   },
 
   create: function(req, res) {
+    console.log("WE Made it")
+    console.log(req.body);
     db.Exercise
       .create(req.body)
       .then(({ _id }) => db.User.findOneAndUpdate({}, { $push: { exercises: _id }}, {new: true }))

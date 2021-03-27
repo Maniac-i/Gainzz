@@ -22,6 +22,12 @@ const apiCalls = {
   broscience: function() {
     return axios.get('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=broscience&type=video&key=AIzaSyBeyYj9AHzrKsUh5vpUIithCK4hMWXDs2M')
   },
+
+  //adds a new exercise
+  addExercise: function(data) {
+    console.log("HERE!")
+    return axios.post('/api/exercise', data)
+  }
 };
 
 export default apiCalls;

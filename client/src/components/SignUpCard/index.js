@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { useLogin, useAuthenticatedUser } from "../../utils/auth";
 import api from '../../utils/register-api';
 import { useHistory } from 'react-router-dom';
-import "./style.css"
+
 
 
 
@@ -52,10 +52,10 @@ function SignUpCard(props) {
         const user = useAuthenticatedUser();
 
     return(
-        <div className="card card-signin flex-row my-5">
+        <div className="card card-signup flex-row my-5">
                         <div className="card-img-left d-none d-md-flex" style={{ background: `scroll center url(${process.env.PUBLIC_URL}/12-129949_gym-backgroundlogo.jpg)`}}>
                         </div>
-                        <div className="card-body">
+                        <div className="card-body" >
 
                         <img className="mx-auto d-block img-fluid" src={`${process.env.PUBLIC_URL}/headers/suHeader.png`} style={{marginBottom: '10%'}} alt="sign up header" />
                         <form className="form-signin">
