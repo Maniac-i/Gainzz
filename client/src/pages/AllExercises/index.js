@@ -42,9 +42,13 @@ function Container() {
   return (
     <div className="container">
       <Navbar/>
+      {!viewDetails ?
       <Jumbotron src={`${process.env.PUBLIC_URL}/headers/aeHeader.png`} > 
       <Link to='/create'className="btn btn-light">Add Exercise</Link>
       </Jumbotron>
+      :
+      <div></div>}
+
       {!viewDetails ?
       exercises.map((exercise) => (
         <ExerciseCard
