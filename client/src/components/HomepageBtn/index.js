@@ -1,5 +1,6 @@
 import React from 'react';
 import './style.css'
+import { Link } from 'react-router-dom';
 
 
 function HomepageBtn(props) {
@@ -7,7 +8,7 @@ function HomepageBtn(props) {
     return (
         <div className="card mb-5 mb-lg-0"   style={props.style}>
             <div className="card-body">
-                <a href={"/" + props.link} className="btn btn-dark text-uppercase">{props.title}</a>
+                <Link to={"/" + props.link} className="btn btn-dark text-uppercase">{props.title}</Link>
             </div>
         </div>
     )
