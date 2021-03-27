@@ -8,7 +8,7 @@ import { useAuthenticatedUser } from '../../utils/auth';
 function Container() {
   const [exercises, setExercises] = useState([]);
   const user = useAuthenticatedUser();
-
+  console.log(user);
   //load all of the users exercises and store them with loadExercises
   useEffect(() => {
     loadExercises()
@@ -36,6 +36,7 @@ function Container() {
           exercisetype={exercise.type}
           userId={exercise.userId}
           key={exercise._id}
+          id={exercise._id}
         />
       ))}
     </div>

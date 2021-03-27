@@ -5,6 +5,8 @@ import SignIn from "./pages/SignIn/Signin";
 import Homepage from './pages/Homepage/index';
 import AllExercises from './pages/AllExercises/index';
 import BroScience from './pages/BroScience/index';
+import AddExerciseForm from './pages/AddExercise/index';
+import ExerciseDetails from './pages/ExerciseDetails/index';
 import './App.css';
 import { useAuthTokenStore } from "./utils/auth";
 import Footer from "./components/Footer"
@@ -22,7 +24,9 @@ function App() {
           <Route exact path="/signin" component={SignIn}/>
           <Route exact path='/home' component={Homepage}/>
           <Route exact path='/broscience' component={BroScience} />
-          <Route exact path='/allexercises' component={AllExercises} />
+          <Route exact path='/workouts' component={AllExercises} />
+          <Route exact path='/create' component={AddExerciseForm} />
+          <Route exact path='/details' component={ExerciseDetails} />
         </Switch>
         <Footer/>
       </div>
