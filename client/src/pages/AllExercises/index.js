@@ -5,6 +5,7 @@ import Navbar from '../../components/Navbar';
 import API from "../../utils/API";
 import { useAuthenticatedUser } from '../../utils/auth';
 import ExerciseDetails from '../ExerciseDetails/index';
+import { Link } from 'react-router-dom';
 
 
 function Container() {
@@ -25,7 +26,6 @@ function Container() {
 
     API.findAllByUserId(id)
       .then((res) => {
-        console.log(res.data);
         setExercises(res.data);
       })
       .catch((err) => console.log(err));
@@ -42,7 +42,14 @@ function Container() {
   return (
     <div className="container">
       <Navbar/>
-      <Jumbotron src={`${process.env.PUBLIC_URL}/headers/aeHeader.png`} />
+      {!viewDetails ?
+      <Jumbotron src={`${process.env.PUBLIC_URL}/headers/aeHeader.png`} > 
+      <Link to='/create'className="btn btn-light">Add Exercise</Link>
+      </Jumbotron>
+      : <div></div>
+      }
+
+
       {!viewDetails ?
       exercises.map((exercise) => (
         <ExerciseCard
