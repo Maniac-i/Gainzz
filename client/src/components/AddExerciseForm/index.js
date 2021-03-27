@@ -37,8 +37,7 @@ function AddExerciseForm(props) {
   };
 
   return (
-    <div className="card card-signin flex-row my-5">
-      <div className="card-img-left d-none d-md-flex"></div>
+    <div className="card card-addexe ">
       <div className="card-body">
         <h5 className="card-title text-center">Add an Exercise</h5>
         <form className="form-signin">
@@ -61,7 +60,7 @@ function AddExerciseForm(props) {
             <option value="core">Core</option>
           </select>
 
-          <div className="form-label-group">
+          <div className="addexe form-label-group">
             <input
               type="text"
               ref={exerciseNameRef}
@@ -82,7 +81,7 @@ function AddExerciseForm(props) {
           >
             Add Exercise
           </button>
-          <a className="d-block text-center mt-2 small" href="/">
+          <a className="d-block text-center mt-2 small" href="/home">
             Return
           </a>
         </form>

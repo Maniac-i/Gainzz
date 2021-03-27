@@ -30,7 +30,7 @@ function Navbar() {
                   </div>
                 </li>
               <li className="nav-item">
-                <a className="nav-link" href="/">Log Out</a>
+                <a className="nav-link" href="/signin">Log Out</a>
               </li>
               
             </ul>

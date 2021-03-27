@@ -4,6 +4,7 @@ import SignUp from "./pages/Signup/Signup";
 import SignIn from "./pages/SignIn/Signin";
 import Homepage from './pages/Homepage/index';
 import AllExercises from './pages/AllExercises/index';
+import AddExercise from './pages/AddExercise/index';
 import BroScience from './pages/BroScience/index';
 import './App.css';
 import { useAuthTokenStore } from "./utils/auth";
@@ -23,6 +24,7 @@ function App() {
           <Route exact path='/home' component={Homepage}/>
           <Route exact path='/broscience' component={BroScience} />
           <Route exact path='/allexercises' component={AllExercises} />
+          <Route exact path='/addexercises' component={AddExercise} />
         </Switch>
         <Footer/>
       </div>

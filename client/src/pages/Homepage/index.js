@@ -1,7 +1,6 @@
 import React from "react";
 import {Col, Row,Container } from '../../components/Grid'
 import Navbar from '../../components/Navbar';
-import Footer from '../../components/Footer';
 import HomepageBtn from '../../components/HomepageBtn';
 
 function Homepage() {
@@ -14,7 +13,7 @@ function Homepage() {
         <Row>
         <Col size="lg-12 xl-12 mx-auto">
           <HomepageBtn 
-          link="workouts"
+          link="allexercises"
           title="Workouts"
           style={{ 
               background: `url(${process.env.PUBLIC_URL}/cardimgs/cardWorkout.jpg)`, 
@@ -26,7 +25,7 @@ function Homepage() {
         <Row>
         <Col size="lg-12 xl-12 mx-auto">
         <HomepageBtn 
-        link="create"
+        link="addexercises"
         title="Create Exercise"
         style={{ 
               background: `url(${process.env.PUBLIC_URL}/cardimgs/cardCreate.jpg)`, 
