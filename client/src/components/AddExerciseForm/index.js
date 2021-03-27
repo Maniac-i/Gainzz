@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import { useAuthenticatedUser } from '../../utils/auth';
 import API from '../../utils/API';
 
@@ -12,7 +12,7 @@ function AddExerciseForm(props) {
 
   function redirectHome() {
     //change to the allexercise route
-    history.push("/allexercises");
+    history.push("/workouts");
   }
 
   function onChange(e) {
@@ -83,9 +83,9 @@ function AddExerciseForm(props) {
           >
             Add Exercise
           </button>
-          <a className="d-block text-center mt-2 small" href="/">
-            Return
-          </a>
+          <Link className="d-block text-center mt-2 small" to="/workouts">
+            All Exercises
+          </Link>
         </form>
       </div>
     </div>

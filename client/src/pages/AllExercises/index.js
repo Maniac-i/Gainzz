@@ -5,6 +5,7 @@ import Navbar from '../../components/Navbar';
 import API from "../../utils/API";
 import { useAuthenticatedUser } from '../../utils/auth';
 import ExerciseDetails from '../ExerciseDetails/index';
+import { Link } from 'react-router-dom';
 
 
 function Container() {
@@ -21,11 +22,10 @@ function Container() {
 
   function loadExercises() {
     //remove and replace with user id number once signup/login works
-    let id = "605cc080a59bb86929d3cf13";
+    let id = user._id;
 
     API.findAllByUserId(id)
       .then((res) => {
-        console.log(res.data);
         setExercises(res.data);
       })
       .catch((err) => console.log(err));
@@ -42,7 +42,9 @@ function Container() {
   return (
     <div className="container">
       <Navbar/>
-      <Jumbotron src={`${process.env.PUBLIC_URL}/headers/aeHeader.png`} />
+      <Jumbotron src={`${process.env.PUBLIC_URL}/headers/aeHeader.png`} > 
+      <Link to='/create'className="btn btn-light">Add Exercise</Link>
+      </Jumbotron>
       {!viewDetails ?
       exercises.map((exercise) => (
         <ExerciseCard
