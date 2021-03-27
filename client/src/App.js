@@ -9,7 +9,8 @@ import AddExerciseForm from './pages/AddExercise/index';
 import ExerciseDetails from './pages/ExerciseDetails/index';
 import './App.css';
 import { useAuthTokenStore } from "./utils/auth";
-import Footer from "./components/Footer"
+import Footer from "./components/Footer";
+import Musclegroups from "./pages/MuscleGroups/index"
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route exact path='/workouts' component={AllExercises} />
           <Route exact path='/create' component={AddExerciseForm} />
           <Route exact path='/details' component={ExerciseDetails} />
+          <Route exact path='/muscle' component={Musclegroups} />
         </Switch>
         <Footer/>
       </div>
