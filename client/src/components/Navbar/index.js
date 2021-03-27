@@ -1,5 +1,6 @@
 import React from "react";
 import './style.css'
+import { Link } from "react-router-dom"
 
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
@@ -16,23 +17,22 @@ function Navbar() {
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ml-auto">
                 <li className="nav-item active">
-                    <a className="nav-link" href="/home">Home
+                    <Link className="nav-link" to="/home">Home
                       <span className="sr-only">(current)</span>
-                    </a>
+                    </Link>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <Link class="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     My Gainzz
-                  </a>
+                  </Link>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item">Workouts</a>
-                    <a class="dropdown-item">Create Workout</a>
+                    <Link class="dropdown-item">Workouts</Link>
+                    <Link class="dropdown-item">Create Workout</Link>
                   </div>
                 </li>
               <li className="nav-item">
-                <a className="nav-link" href="/">Log Out</a>
+                <Link className="nav-link" to="/signin">Log Out</Link>
               </li>
-              
             </ul>
           </div>
         </div>
