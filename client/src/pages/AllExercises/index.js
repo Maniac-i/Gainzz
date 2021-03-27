@@ -46,8 +46,9 @@ function Container() {
       <Jumbotron src={`${process.env.PUBLIC_URL}/headers/aeHeader.png`} > 
       <Link to='/create'className="btn btn-light">Add Exercise</Link>
       </Jumbotron>
-      :
-      <div></div>}
+      : <div></div>
+      }
+
 
       {!viewDetails ?
       exercises.map((exercise) => (
