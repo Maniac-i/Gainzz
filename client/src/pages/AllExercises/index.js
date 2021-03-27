@@ -3,9 +3,11 @@ import ExerciseCard from "../../components/ExerciseCard/index";
 import Jumbotron from "../../components/Jumbotron/index";
 import Navbar from '../../components/Navbar';
 import API from "../../utils/API";
+import { useAuthenticatedUser } from '../../utils/auth';
 
 function Container() {
   const [exercises, setExercises] = useState([]);
+  const user = useAuthenticatedUser();
 
   //load all of the users exercises and store them with loadExercises
   useEffect(() => {
@@ -14,7 +16,7 @@ function Container() {
 
   function loadExercises() {
     //remove and replace with user id number once signup/login works
-    let id = "605611e09c471acaca66eac6";
+    let id = user._id;
 
     API.findAllByUserId(id)
       .then((res) => {
