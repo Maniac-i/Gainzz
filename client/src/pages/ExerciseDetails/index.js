@@ -20,7 +20,7 @@ function Container(props) {
   //find an exercise by id and populates its details.
   function findAllDetails() {
 
-    let id = '605e7c237c9fe702d70eabb8'
+    let id = props.id
 
     API.populateExerciseDetails(id)
       .then((res) => {
