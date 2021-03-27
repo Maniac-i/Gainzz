@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom'
+ 
 function BroCard(props) {
   return(
 
@@ -8,7 +9,7 @@ function BroCard(props) {
   <div className="card-body">
     <h5 className="card-title">{props.title}</h5>
     <p className="card-text">{props.description}</p>
-    <a href={"https://www.youtube.com/watch?v=" + props.videoId}className="btn btn-primary">WATCH</a>
+    <Link href={"https://www.youtube.com/watch?v=" + props.videoId}className="btn btn-primary">WATCH</Link>
   </div>
 </div>
   )
