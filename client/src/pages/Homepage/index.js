@@ -14,6 +14,7 @@ function Homepage() {
       <Col size="lg-12 xl-12 mx-auto">
         <HomepageBtn 
         title="Workouts"
+        link='broscience'
         style={{ 
             background: `url(${process.env.PUBLIC_URL}/cardimgs/cardWorkout.jpg)`, 
             backgroundPosition: 'center', 
