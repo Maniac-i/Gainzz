@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { useHistory, Link } from "react-router-dom";
 import { useAuthenticatedUser } from '../../utils/auth';
+import { Link } from 'react-router-dom';
 import API from '../../utils/API';
 
 function AddExerciseForm(props) {
@@ -38,8 +39,7 @@ function AddExerciseForm(props) {
 
 
   return (
-    <div className="card card-signin flex-row my-5">
-      <div className="card-img-left d-none d-md-flex"></div>
+    <div className="card card-addexe ">
       <div className="card-body">
         <h5 className="card-title text-center">Add an Exercise</h5>
         <form className="form-signin">
@@ -62,7 +62,7 @@ function AddExerciseForm(props) {
             <option value="core">Core</option>
           </select>
 
-          <div className="form-label-group">
+          <div className="addexe form-label-group">
             <input
               type="text"
               ref={exerciseNameRef}
@@ -83,8 +83,10 @@ function AddExerciseForm(props) {
           >
             Add Exercise
           </button>
+
           <Link className="d-block text-center mt-2 small" to="/workouts">
             All Exercises
+
           </Link>
         </form>
       </div>

@@ -2,8 +2,7 @@ import React from 'react';
 import './style.css'
 import { Link } from 'react-router-dom';
 
-
-function HomepageBtn(props) {
+function CardLink(props) {
 
     return (
         <div className="card mb-5 mb-lg-0"   style={props.style}>
@@ -14,4 +13,4 @@ function HomepageBtn(props) {
     )
 }
 
-export default HomepageBtn;
+export default CardLink;

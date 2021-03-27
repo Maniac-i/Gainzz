@@ -1,22 +1,17 @@
 import React from "react";
 import {Col, Row,Container } from '../../components/Grid'
 import Navbar from '../../components/Navbar';
-import Footer from '../../components/Footer';
-import HomepageBtn from '../../components/HomepageBtn';
-import { useAuthenticatedUser } from '../../utils/auth';
+import CardLink from '../../components/CardLink';
 
 function Homepage() {
   
-  const user = useAuthenticatedUser();
-  console.log(user);
-
   return (
     <div className="container">
       <Container>
         <Navbar/>
         <Row>
         <Col size="lg-12 xl-12 mx-auto">
-          <HomepageBtn 
+          <CardLink 
           link="workouts"
           title="Workouts"
           style={{ 
@@ -28,7 +23,7 @@ function Homepage() {
 
         <Row>
         <Col size="lg-12 xl-12 mx-auto">
-        <HomepageBtn 
+        <CardLink 
         link="create"
         title="Create Exercise"
         style={{ 
@@ -40,7 +35,7 @@ function Homepage() {
 
         <Row> 
           <Col size="lg-12 xl-12 mx-auto">
-          <HomepageBtn
+          <CardLink
           link="muscle" 
           title="Muscle Groups"
           style={{ 

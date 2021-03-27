@@ -1,11 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
 :root {
   --input-padding-x: 1.5rem;
   --input-padding-y: .75rem;
 }
 
 body {
+  font-family: 'Josefin Sans', sans-serif;
   background: #242424;
   background: linear-gradient(to right, #5f6975, #061118);
+}
+
+.card-addexe {
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  height: 35vh;
+  width: 55vh;
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+  margin-top: 6%;
 }
 
 .card-signin {
@@ -86,4 +101,16 @@ body {
   border-radius: 5px;
 }
 
+
+.exercise{
+  width: 35vh;
+  height: 18vh;
+  border: none;
+  
+}
+
+.exercise .card-body{
+  border-radius: 5px;
+  border: none;
+}
 
