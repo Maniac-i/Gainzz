@@ -6,8 +6,8 @@ import TableRow from '../../components/TableRow/index'
 import Navbar from '../../components/Navbar';
 var dayjs = require('dayjs');
 
-function Container() {
-  
+function Container(props) {
+  console.log(props.id)
   const [detail, setDetail] = useState([]);
   const [allDetails, setAllDetails] = useState([]);
 
@@ -20,7 +20,7 @@ function Container() {
   //find an exercise by id and populates its details.
   function findAllDetails() {
 
-    let id = "60563480dd6d07d21c959117"
+    let id = '605e7c237c9fe702d70eabb8'
 
     API.populateExerciseDetails(id)
       .then((res) => {
@@ -35,8 +35,7 @@ function Container() {
   }
 
   return (
-    <div>
-    <Navbar/>      
+    <div>     
     <Jumbotron title="Exercise Deets" />
     <div className="card text-center mx-auto">
   <div className="card-body bg-dark text-white">
