@@ -1,0 +1,26 @@
+
+  .pricing hr {
+    margin: 1.5rem 0;
+  }
+  
+   .btn {
+    font-size: 80%;
+    border-radius: 5rem;
+    letter-spacing: .1rem;
+    font-weight: bold;
+    padding: 1rem;
+    transition: all 0.2s;
+    margin: 0;
+    
+    top: 50%;
+   
+  }
+
+  
+  
+
+  .card {
+    height: 15vw;
+    background-position: center;
+    background-size: cover;
+}
