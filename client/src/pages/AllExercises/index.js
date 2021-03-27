@@ -21,7 +21,7 @@ function Container() {
 
   function loadExercises() {
     //remove and replace with user id number once signup/login works
-    let id = "605cc080a59bb86929d3cf13";
+    let id = user._id;
 
     API.findAllByUserId(id)
       .then((res) => {
