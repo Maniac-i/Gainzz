@@ -43,11 +43,9 @@ function SignInCard(props) {
 
     return (
         <div className="card card-signin flex-row my-5">
-                        <div className="card-img-left d-none d-md-flex">
+                        <div className="card-img-left d-none d-md-flex" style={{ background: `scroll center url(${process.env.PUBLIC_URL}/12-129949_gym-backgroundlogo.jpg)`}}>
                         </div>
                         <div className="card-body">
-                           
-                        <h5 className="card-title text-center">Sign In</h5>
                         <form className="form-signin">
                             <div className="form-label-group">
                             <input type="text" ref={usernameRef} id="inputUserame" className="form-control" placeholder="Username" required autoFocus/>

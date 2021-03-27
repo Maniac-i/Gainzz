@@ -1,0 +1,19 @@
+html,
+body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+}
+
+#sticky-footer {
+  flex-shrink: none;
+}
+
+footer{
+  position: relative;
+  margin-top: 600px; /* negative value of footer height */
+  clear:both;
+  padding-top:20px;
+}

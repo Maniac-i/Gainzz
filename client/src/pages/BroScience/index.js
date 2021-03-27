@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Navbar from '../../components/Navbar';
 import Jumbotron from "../../components/Jumbotron/index";
 import BroCard from '../../components/BroCard/index';
 import API from "../../utils/API";
@@ -24,7 +25,8 @@ function Broscience() {
 
   return(
     <div>
-    <Jumbotron title="Bro Science" />
+      <Navbar/>
+    <Jumbotron src={`${process.env.PUBLIC_URL}/headers/boHeader.png`} />
     {videos.map((video) => (
         <BroCard
           videoId={video.id.videoId}
