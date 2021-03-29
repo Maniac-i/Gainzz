@@ -3,24 +3,24 @@ import ExerciseCard from "../../components/ExerciseCard/index";
 import Jumbotron from "../../components/Jumbotron/index";
 import Navbar from '../../components/Navbar';
 import API from "../../utils/API";
-import { useAuthenticatedUser } from '../../utils/auth';
 import ExerciseDetails from '../ExerciseDetails/index';
 import { Link } from 'react-router-dom';
+import jwt_decode from "jwt-decode";
 
 
 function Container() {
   const [exercises, setExercises] = useState([]);
-  const [eId, setEid] = useState();
+  const [eId, setEid] = useState('');
   const [viewDetails, setViewDetails] = useState();
+  
+ const user = (jwt_decode(localStorage.jwtToken));
 
-  const user = useAuthenticatedUser();
-  console.log(user);
   //load all of the users exercises and store them with loadExercises
   useEffect(() => {
     loadExercises()
   }, [])
 
-  let id = user._id;
+  let id = user.id;
   function loadExercises() {
     //remove and replace with user id number once signup/login works
 

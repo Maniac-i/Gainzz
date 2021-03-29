@@ -4,7 +4,6 @@ import SignUp from "./pages/Signup/Signup";
 import SignIn from "./pages/SignIn/Signin";
 import Homepage from './pages/Homepage/index';
 import AllExercises from './pages/AllExercises/index';
-import AddExercise from './pages/AddExercise/index';
 import BroScience from './pages/BroScience/index';
 import AddExerciseForm from './pages/AddExercise/index';
 import ExerciseDetails from './pages/ExerciseDetails/index';
