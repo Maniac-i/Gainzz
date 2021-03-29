@@ -5,7 +5,7 @@ module.exports = {
   create: function(req, res) {
     db.ExerciseDetails
     .create(req.body)
-    .then(({ _id }) => db.Exercise.findOneAndUpdate({}, { $push: { exerciseDetails: _id }}, {new: true }))
+    .then(({ _id, userId }) => db.Exercise.findOneAndUpdate({_id: userId}, { $push: { exerciseDetails: _id }}, {new: true }))
     .then(dbExercies => {
       res.json(dbExercies);
     })
