@@ -33,9 +33,20 @@ function Musclegroups() {
                 link="muscle"
                 title="Chest"
                 style={{ 
-                        background: `url(${process.env.PUBLIC_URL}/cardimgs/cardMuscle.jpg`, 
+                        background: `url(${process.env.PUBLIC_URL}/musclegroups/chestIMG.jpg`, 
                         backgroundPosition: 'center', 
                         backgroundSize: "cover"}}/>
+            </Col>
+          </Row>
+
+          <Row> 
+            <Col size="lg-12 xl-12 mx-auto">
+                <CardLink
+                link="muscle" 
+                title="Shoulders"
+                style={{ 
+                    background: `url(${process.env.PUBLIC_URL}/musclegroups/shouldersIMG.jpg)`, 
+                    backgroundPosition: 'center'}}/>
             </Col>
           </Row>
   
@@ -45,9 +56,8 @@ function Musclegroups() {
                 link="muscle" 
                 title="Back"
                 style={{ 
-                    background: `url(${process.env.PUBLIC_URL}/cardimgs/cardMuscle.jpg)`, 
-                    backgroundPosition: 'center', 
-                    backgroundSize: "cover"}}/>
+                    background: `url(${process.env.PUBLIC_URL}/musclegroups/backIMG.jpg)`, 
+                    backgroundPosition: 'center'}}/>
             </Col>
           </Row>
 
@@ -57,7 +67,7 @@ function Musclegroups() {
                 link="muscle" 
                 title="Biceps"
                 style={{ 
-                    background: `url(${process.env.PUBLIC_URL}/cardimgs/cardMuscle.jpg)`, 
+                    background: `url(${process.env.PUBLIC_URL}/musclegroups/bicepsIMG.jpg)`, 
                     backgroundPosition: 'center', 
                     backgroundSize: "cover"}}/>
             </Col>
@@ -69,19 +79,7 @@ function Musclegroups() {
                 link="muscle" 
                 title="Triceps"
                 style={{ 
-                    background: `url(${process.env.PUBLIC_URL}/cardimgs/cardMuscle.jpg)`, 
-                    backgroundPosition: 'center', 
-                    backgroundSize: "cover"}}/>
-            </Col>
-          </Row>
-
-          <Row> 
-            <Col size="lg-12 xl-12 mx-auto">
-                <CardLink
-                link="muscle" 
-                title="Shoulders"
-                style={{ 
-                    background: `url(${process.env.PUBLIC_URL}/cardimgs/cardMuscle.jpg)`, 
+                    background: `url(${process.env.PUBLIC_URL}/musclegroups/tricepsIMG.jpg)`, 
                     backgroundPosition: 'center', 
                     backgroundSize: "cover"}}/>
             </Col>
@@ -93,7 +91,7 @@ function Musclegroups() {
                 link="muscle" 
                 title="Legs"
                 style={{ 
-                    background: `url(${process.env.PUBLIC_URL}/cardimgs/cardMuscle.jpg)`, 
+                    background: `url(${process.env.PUBLIC_URL}/musclegroups/legsIMG.jpg)`, 
                     backgroundPosition: 'center', 
                     backgroundSize: "cover"}}/>
             </Col>
@@ -105,8 +103,8 @@ function Musclegroups() {
                 link="muscle" 
                 title="Core"
                 style={{ 
-                    background: `url(${process.env.PUBLIC_URL}/cardimgs/cardMuscle.jpg)`, 
-                    backgroundPosition: 'center', 
+                    background: `url(${process.env.PUBLIC_URL}/musclegroups/coreIMG.jpg)`, 
+                    backgroundPosition: 'center',
                     backgroundSize: "cover"}}/>
             </Col>
           </Row>
