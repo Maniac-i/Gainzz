@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import ExerciseCard from "../../components/ExerciseCard/index";
 import Jumbotron from "../../components/Jumbotron/index";
@@ -44,7 +45,7 @@ function Container() {
       <Navbar/>
       {!viewDetails ?
       <Jumbotron src={`${process.env.PUBLIC_URL}/headers/aeHeader.png`} > 
-      <Link to='/create'className="btn btn-light">Add Exercise</Link>
+      <Link to='/create' className="btn btn-light">Add Exercise</Link>
       </Jumbotron>
       : <div></div>
       }
