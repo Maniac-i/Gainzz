@@ -109,6 +109,8 @@ function Musclegroups() {
             </Col>
           </Row>
 
+          <Footer/>
+
         </Container>
         
       </div>
