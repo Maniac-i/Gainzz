@@ -27,6 +27,10 @@ const apiCalls = {
   addExercise: function(data) {
     console.log("HERE!")
     return axios.post('/api/exercise', data)
+  },
+
+  addDetail: function(data) {
+    return axios.post('/api/exercisedetails', data)
   }
 };
 

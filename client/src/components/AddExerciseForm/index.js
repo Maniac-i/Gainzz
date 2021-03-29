@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
 import { useHistory, Link } from "react-router-dom";
 import { useAuthenticatedUser } from '../../utils/auth';
-import { Link } from 'react-router-dom';
 import API from '../../utils/API';
 
 function AddExerciseForm(props) {

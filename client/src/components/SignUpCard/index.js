@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { useLogin, useAuthenticatedUser } from "../../utils/auth";
+import { useLogin } from "../../utils/auth";
 import api from '../../utils/register-api';
 import { useHistory } from 'react-router-dom';
 
@@ -37,7 +37,6 @@ function SignUpCard(props) {
                 await login({ email, password, username });
     
                 // User has been successfully registered, logged in and added to state. Perform any additional actions you need here such as redirecting to a new page.
-                console.log("I did it:", user);
                 //redirect user to home page after login
                 redirectHome();
 
@@ -49,7 +48,6 @@ function SignUpCard(props) {
             }
 
         }
-        const user = useAuthenticatedUser();
 
     return(
         <div className="card card-signup flex-row my-5">
