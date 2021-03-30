@@ -48,7 +48,7 @@ function Container(props) {
       })
   }
 
-  const onClickSetAddDetaisl = () => {
+  const onClickSetAddDetails = () => {
     setAddDetail(true);
     findAllDetails();
   }
@@ -71,7 +71,7 @@ function Container(props) {
  :
 <AddDetailsForm 
 id={props.id}
-setAddDetail={onClickSetAddDetaisl}/>
+setAddDetail={onClickSetAddDetails}/>
 }
 
 <br/>

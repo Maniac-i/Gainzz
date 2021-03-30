@@ -45,6 +45,19 @@ function Homepage() {
           </Col>
 
         </Row>
+
+        <Row> 
+          <Col size="lg-12 xl-12 mx-auto">
+          <CardLink
+          link="broscience" 
+          title="Bro Science"
+          style={{ 
+              background: `url(${process.env.PUBLIC_URL}/cardimgs/cardBro.jpg)`, 
+              backgroundPosition: 'center', 
+              backgroundSize: "cover"}}/>
+          </Col>
+
+        </Row>
       </Container>
       
     </div>
