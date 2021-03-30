@@ -5,6 +5,11 @@ import { Link } from "react-router-dom"
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 function Navbar() {
+
+  function logout() {
+    localStorage.removeItem("jwtToken");
+  }
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container">
@@ -31,7 +36,7 @@ function Navbar() {
                   </div>
                 </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/signin" style={{color: "#fff"}}>Log Out</Link>
+                <Link className="nav-link" to="/signin" onClick={() => logout()}style={{color: "#fff"}}>Log Out</Link>
               </li>
             </ul>
           </div>
