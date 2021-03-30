@@ -21,6 +21,8 @@ function AddDetailsForm(props) {
           reps: rep,
           weight: weight,
           userId: props.id
+        }).then(res => {
+          props.setAddDetail();
         })
 
       } catch(err) {

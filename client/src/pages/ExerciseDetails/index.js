@@ -50,6 +50,7 @@ function Container(props) {
 
   const onClickSetAddDetaisl = () => {
     setAddDetail(true);
+    findAllDetails();
   }
 
   return (
