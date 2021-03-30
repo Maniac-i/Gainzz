@@ -1,11 +1,11 @@
 import React, { useRef, useState } from "react";
 import { useHistory, Link } from "react-router-dom";
-import { useAuthenticatedUser } from '../../utils/auth';
 import API from '../../utils/API';
+import jwt_decode from "jwt-decode";
 
 function AddExerciseForm(props) {
 
-  const user = useAuthenticatedUser();
+  const user = (jwt_decode(localStorage.jwtToken));
   const history = useHistory();
   const [value, setValue] = useState();
   const exerciseNameRef = useRef();
@@ -25,7 +25,7 @@ function AddExerciseForm(props) {
     let exercise = {
       type: value,
       name: exerciseNameRef.current.value,
-      userId: user._id
+      userId: user.id
     }
 
     API.addExercise(exercise)

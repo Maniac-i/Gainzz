@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import API from "../../utils/API";
 import Jumbotron from '../../components/Jumbotron/index';
@@ -7,12 +8,20 @@ import AddDetailsForm from '../../components/AddDetailsForm';
 var dayjs = require('dayjs');
 
 function Container(props) {
-  console.log(props.id)
-  const [detail, setDetail] = useState([]);
+  
+  const [detail, setDetail] = useState({
+    sets: '',
+    reps: '',
+    weight: '',
+  });
   const [allDetails, setAllDetails] = useState([]);
   const [addDetail, setAddDetail] = useState(true);
 
-  const date = (dayjs(detail.date).format('MM/DD/YYYY'));
+  var date;
+  
+  if (allDetails) {
+  date = dayjs(detail.date).format('MM/DD/YYYY');
+  } else { date = ""}
 
   useEffect(() => {
     findAllDetails()
@@ -25,7 +34,11 @@ function Container(props) {
 
     API.populateExerciseDetails(id)
       .then((res) => {
-        
+        console.log(res.data[0].exerciseDetails.length)
+        if (res.data[0].exerciseDetails.length === 0) {
+          return;
+        }
+
         let deets = res.data[0].exerciseDetails;
         let mostRecentDeet = deets[deets.length - 1];
 
@@ -37,6 +50,7 @@ function Container(props) {
 
   const onClickSetAddDetaisl = () => {
     setAddDetail(true);
+    findAllDetails();
   }
 
   return (

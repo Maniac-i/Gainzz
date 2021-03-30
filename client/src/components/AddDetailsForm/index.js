@@ -1,6 +1,5 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import API from '../../utils/API';
-import { Link } from 'react-router-dom';
 
 function AddDetailsForm(props) {
   
@@ -22,6 +21,8 @@ function AddDetailsForm(props) {
           reps: rep,
           weight: weight,
           userId: props.id
+        }).then(res => {
+          props.setAddDetail();
         })
 
       } catch(err) {
