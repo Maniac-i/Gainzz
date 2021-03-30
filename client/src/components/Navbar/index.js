@@ -5,6 +5,11 @@ import { Link } from "react-router-dom"
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 function Navbar() {
+
+  function logout() {
+    localStorage.removeItem("jwtToken");
+  }
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container">
@@ -21,17 +26,17 @@ function Navbar() {
                       <span className="sr-only">(current)</span>
                     </Link>
                 </li>
-                <li class="nav-item dropdown">
-                  <Link class="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{color: "#fff"}}>
+                <li className="nav-item dropdown">
+                  <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{color: "#fff"}}>
                     My Gainzz
                   </Link>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <Link class="dropdown-item">Workouts</Link>
-                    <Link class="dropdown-item">Create Workout</Link>
+                  <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <Link to="#" className="dropdown-item">Workouts</Link>
+                    <Link to="#" className="dropdown-item">Create Workout</Link>
                   </div>
                 </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/signin" style={{color: "#fff"}}>Log Out</Link>
+                <Link className="nav-link" to="/signin" onClick={() => logout()}style={{color: "#fff"}}>Log Out</Link>
               </li>
             </ul>
           </div>
