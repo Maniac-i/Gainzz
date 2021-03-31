@@ -71,14 +71,16 @@ function Container() {
         <Row>
           {row.map (exercise => (
             <Col size="md-4 xs-12 mx-auto">
+          
             <ExerciseCard
               exercisename={exercise.name}
               exercisetype={exercise.type}
               userId={exercise.userId}
               key={exercise._id}
               id={exercise._id}>
-              <div className="btn btn-light" data-id={exercise._id} onClick={getExerciseId}>View</div>
+              <div className="btn btn-outline-light btn-sm" data-id={exercise._id} onClick={getExerciseId}>View</div>
             </ExerciseCard>
+      
           </Col>
         )
 )}

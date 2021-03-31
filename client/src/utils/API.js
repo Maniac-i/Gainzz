@@ -20,7 +20,7 @@ const apiCalls = {
 
   //youtube API call for Broscience
   broscience: function() {
-    return axios.get('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=broscience&type=video&key=AIzaSyBeyYj9AHzrKsUh5vpUIithCK4hMWXDs2M')
+    return axios.get('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=24&q=broscience&type=video&key=AIzaSyBeyYj9AHzrKsUh5vpUIithCK4hMWXDs2M')
   },
 
   //adds a new exercise
