@@ -7,6 +7,8 @@ import API from "../../utils/API";
 import ExerciseDetails from '../ExerciseDetails/index';
 import { Link } from 'react-router-dom';
 import jwt_decode from "jwt-decode";
+import { Row, Col } from "../../components/Grid"
+import AddBtn from '../../components/AddExerciseCard';
 
 
 function Container() {
@@ -40,34 +42,55 @@ function Container() {
     
   } 
 
+  let exerciseCols = []
+  if (exercises.length>0) {
+    exerciseCols = exercises.reduce( (rows, key, index) =>{ 
+       return (index % 3 === 0 ? rows.push([key]) 
+         : rows[rows.length-1].push(key)) && rows;
+     }, []);
+   
+}
+
   return (
     <div className="container">
       <Navbar/>
       {!viewDetails ?
-      <Jumbotron src={`${process.env.PUBLIC_URL}/headers/aeHeader.png`} > 
-      <Link to='/create' className="btn btn-light">Add Exercise</Link>
-      </Jumbotron>
+      <div className="header">
+      <Jumbotron src={`${process.env.PUBLIC_URL}/headers/aeHeader.png`} /> 
+      <AddBtn/>
+      </div>
+      
+        
       : <div></div>
       }
 
 
       {!viewDetails ?
-      exercises.map((exercise) => (
-        <ExerciseCard
-          exercisename={exercise.name}
-          exercisetype={exercise.type}
-          userId={exercise.userId}
-          key={exercise._id}
-          id={exercise._id}>
-          <div className="btn btn-light" data-id={exercise._id} onClick={getExerciseId}>View</div>
-          </ExerciseCard>
-          
+      exerciseCols.map((row) => (
+
+        <Row>
+          {row.map (exercise => (
+            <Col size="md-4 xs-12 mx-auto">
+            <ExerciseCard
+              exercisename={exercise.name}
+              exercisetype={exercise.type}
+              userId={exercise.userId}
+              key={exercise._id}
+              id={exercise._id}>
+              <div className="btn btn-light" data-id={exercise._id} onClick={getExerciseId}>View</div>
+            </ExerciseCard>
+          </Col>
+        )
+)}
+        </Row>
+         
       ))
-        :<div>
-      <div className="btn btn-light" onClick={() => setViewDetails(false)}>Go Back</div>
-      <ExerciseDetails 
-      id={eId}/>
-      </div>}
+      :
+
+        <div>
+          <div className="btn btn-light" onClick={() => setViewDetails(false)}>Go Back</div>
+          <ExerciseDetails id={eId}/>
+        </div>}
     </div>
   );
 }

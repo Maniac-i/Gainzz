@@ -1,7 +1,6 @@
 import React from "react";
 import {Col, Row,Container } from '../../components/Grid'
 import Navbar from '../../components/Navbar';
-import Footer from '../../components/Footer';
 import CardLink from '../../components/CardLink';
 import { useAuthenticatedUser } from '../../utils/auth';
 
@@ -14,18 +13,6 @@ function Musclegroups() {
       <div className="container">
         <Container>
           <Navbar/>
-
-          <Row>
-            <Col size="lg-12 xl-12 mx-auto">
-                <CardLink 
-                link="muscle"
-                title="All Muscle Groups"
-                style={{ 
-                        background: `url(${process.env.PUBLIC_URL}/cardimgs/cardMuscle.jpg)`, 
-                        backgroundPosition: 'center', 
-                        backgroundSize: "cover"}}/>
-            </Col>
-          </Row>
   
           <Row>
             <Col size="lg-12 xl-12 mx-auto">
@@ -57,7 +44,8 @@ function Musclegroups() {
                 title="Back"
                 style={{ 
                     background: `url(${process.env.PUBLIC_URL}/musclegroups/backIMG.jpg)`, 
-                    backgroundPosition: 'center'}}/>
+                    backgroundPosition: 'center', 
+                    backgroundSize: "cover"}}/>
             </Col>
           </Row>
 
@@ -108,8 +96,6 @@ function Musclegroups() {
                     backgroundSize: "cover"}}/>
             </Col>
           </Row>
-
-          <Footer/>
 
         </Container>
         

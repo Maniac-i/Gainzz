@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import API from "../../utils/API";
-import Jumbotron from '../../components/Jumbotron/index';
 import DetailsTable from '../../components/DetailsTable/index';
 import TableRow from '../../components/TableRow/index';
 import AddDetailsForm from '../../components/AddDetailsForm';
@@ -55,7 +54,7 @@ function Container(props) {
 
   return (
     <div>     
-    <Jumbotron title="Exercise Deets" />
+    
     <div className="card text-center mx-auto">
   <div className="card-body bg-dark text-white">
     <h3>Date: {date}</h3>
