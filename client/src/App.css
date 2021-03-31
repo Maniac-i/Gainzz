@@ -102,7 +102,7 @@ body {
 }
 
 
-.exercise{
+.exercise {
   width: 35vh;
   height: 18vh;
   border: none;
@@ -112,5 +112,10 @@ body {
 .exercise .card-body{
   border-radius: 5px;
   border: none;
+}
+
+.add-exercise{
+  height: 7vh;
+  border: 0;
 }
 
