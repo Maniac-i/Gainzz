@@ -5,10 +5,10 @@ import Jumbotron from "../../components/Jumbotron/index";
 import Navbar from '../../components/Navbar';
 import API from "../../utils/API";
 import ExerciseDetails from '../ExerciseDetails/index';
-import { Link } from 'react-router-dom';
 import jwt_decode from "jwt-decode";
 import { Row, Col } from "../../components/Grid"
 import AddBtn from '../../components/AddExerciseCard';
+import FontAwesome from 'react-fontawesome'
 
 
 function Container() {
@@ -78,7 +78,15 @@ function Container() {
               userId={exercise.userId}
               key={exercise._id}
               id={exercise._id}>
-              <div className="btn btn-outline-light btn-sm" data-id={exercise._id} onClick={getExerciseId}>View</div>
+
+              <div className=" icon btn btn-light bg-transparent border-0" data-id={exercise._id} onClick={getExerciseId}>
+                <FontAwesome className="super-crazy-colors"
+                    name="folder-open"
+                    size="2x"
+                    style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: "white" }}
+                  />
+              </div>
+
             </ExerciseCard>
       
           </Col>
