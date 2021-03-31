@@ -9,6 +9,7 @@ import React from 'react';
       <th scope="col">Sets</th>
       <th scope="col">Reps</th>
       <th scope="col">Weight</th>
+      <th scope="col">Delete</th>
     </tr>
   </thead>
   <tbody>
