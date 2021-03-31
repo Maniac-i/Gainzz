@@ -40,6 +40,7 @@ function Container(props) {
 
         let deets = res.data[0].exerciseDetails;
         let mostRecentDeet = deets[deets.length - 1];
+        console.log(deets);
 
         setDetail(mostRecentDeet);
         setAllDetails(deets);
@@ -81,6 +82,9 @@ setAddDetail={onClickSetAddDetails}/>
   sets={deet.sets}
   reps={deet.reps}
   weight={deet.weight}
+  id={deet._id}
+  key={deet._id}
+  findAllDetails={findAllDetails}
   />))}
 </DetailsTable>
 </div>
