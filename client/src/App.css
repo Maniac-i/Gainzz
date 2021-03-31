@@ -19,7 +19,7 @@ body {
   border: 0;
   border-radius: 1rem;
   box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
-  height: 35vh;
+  height: auto;
   width: 55vh;
   margin: 0 auto;
   float: none;
@@ -107,8 +107,8 @@ body {
 
 
 .exercise {
-  width: 30vh;
-  height: 19vh;
+  width: 35vh;
+  height: auto;
   border: none;
   border-radius: 15px;
   
@@ -124,5 +124,7 @@ body {
   border: 0;
 }
 
-
+.bro {
+  height: auto;
+}
 
