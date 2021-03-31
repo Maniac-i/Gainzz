@@ -11,6 +11,10 @@ body {
   background: linear-gradient(to right, #5f6975, #061118);
 }
 
+.jumbotron{
+  border-radius: 15px;
+}
+
 .card-addexe {
   border: 0;
   border-radius: 1rem;
@@ -103,9 +107,10 @@ body {
 
 
 .exercise {
-  width: 35vh;
-  height: 18vh;
+  width: 30vh;
+  height: 19vh;
   border: none;
+  border-radius: 15px;
   
 }
 
@@ -118,4 +123,6 @@ body {
   height: 7vh;
   border: 0;
 }
+
+
 

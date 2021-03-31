@@ -1,0 +1,13 @@
+.super-crazy-colors{
+    margin-left: 5px;
+}
+
+.icon:hover {
+    transform: scale(1.5);
+  }
+  
+  .addbtn:hover {
+    transform: scale(1.1);
+  }
+
+  
