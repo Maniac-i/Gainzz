@@ -55,39 +55,33 @@ function Container(props) {
 
   return (
     <div>     
-    
-    <div className="card text-center mx-auto">
-  <div className="card-body bg-dark text-white">
-    <h3>Date: {date}</h3>
-    <p className='card-text'>Sets: {detail.sets}</p>
-    <p className='card-text'>Reps: {detail.reps}</p>
-    <p className='card-text'>Weight: {detail.weight}</p>
-  </div>
-</div>
-
-{addDetail ?
-  <button className="btn btn-lg btn-dark btn-block text-uppercase" 
- onClick={() => setAddDetail(false)}>Add Detail</button>
- :
-<AddDetailsForm 
-id={props.id}
-setAddDetail={onClickSetAddDetails}/>
+      <div className="details card text-center mx-auto border-0">
+        <div className="card-body bg-dark text-white">
+          <h3 style={{color: "#ffc107", marginTop: "15px"}}>{props.name}</h3>
+        </div>
+      </div>
+      <br/>
+      <DetailsTable>
+        {allDetails.map((deet) => (
+        <TableRow 
+        date={dayjs(deet.date).format('MM/DD/YYYY')}
+        sets={deet.sets}
+        reps={deet.reps}
+        weight={deet.weight}
+        id={deet._id}
+        key={deet._id}
+        findAllDetails={findAllDetails}
+        />))}
+      </DetailsTable>
+        {addDetail ?
+      <button className="btn btn-lg btn-dark btn-block text-uppercase" 
+    onClick={() => setAddDetail(false)}>Add Detail</button>
+    :
+    <AddDetailsForm 
+    id={props.id}
+    setAddDetail={onClickSetAddDetails}/>
 }
-
-<br/>
-<DetailsTable>
-  {allDetails.map((deet) => (
-  <TableRow 
-  date={dayjs(deet.date).format('MM/DD/YYYY')}
-  sets={deet.sets}
-  reps={deet.reps}
-  weight={deet.weight}
-  id={deet._id}
-  key={deet._id}
-  findAllDetails={findAllDetails}
-  />))}
-</DetailsTable>
-</div>
+  </div>
   )
 }
 

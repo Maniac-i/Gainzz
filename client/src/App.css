@@ -7,8 +7,8 @@
 
 body {
   font-family: 'Josefin Sans', sans-serif;
-  background: #242424;
-  background: linear-gradient(to right, #5f6975, #061118);
+  background: #5f6975;
+  
 }
 
 .jumbotron{
@@ -107,7 +107,6 @@ body {
 
 
 .exercise {
-  width: 35vh;
   height: auto;
   border: none;
   border-radius: 15px;
@@ -119,14 +118,30 @@ body {
   border: none;
 }
 
+.exercise:hover{
+  transition: transform .2s;
+  transform: scale(1.2)
+}
+.add-exercise:hover{
+  transition: transform .2s;
+  transform: scale(1.1)
+}
+
 .add-exercise{
-  height: 7vh;
+  height: 80px;
   border: 0;
+  box-shadow: 10px 10px 10px #333333;
 }
 
 .bro {
   height: auto;
 }
+
+.details{
+  height: 100px;
+}
+
+
 
 
 

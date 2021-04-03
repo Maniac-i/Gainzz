@@ -3,7 +3,7 @@ import React from 'react';
  function DetailsTable(props) {
    return(
 <table className="table">
-  <thead className="thead-dark">
+  <thead className="thead text-white">
     <tr>
       <th scope="col">Date</th>
       <th scope="col">Sets</th>
