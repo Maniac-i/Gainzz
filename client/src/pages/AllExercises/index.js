@@ -19,7 +19,7 @@ function Container() {
   const [eName, setEname] = useState('');
   const [viewDetails, setViewDetails] = useState();
   
- const user = (jwt_decode(localStorage.jwtToken));
+  const user = (jwt_decode(localStorage.jwtToken));
 
   //load all of the users exercises and store them with loadExercises
   useEffect(() => {
@@ -54,7 +54,7 @@ function Container() {
          : rows[rows.length-1].push(key)) && rows;
      }, []);
    
-}
+  }
 
   return (
     <div className="container">
@@ -87,8 +87,8 @@ function Container() {
             </a>
       
           </Col>
-        )
-)}
+          )
+          )}
         </Row>
          
       ))
@@ -99,6 +99,7 @@ function Container() {
           <ExerciseDetails id={eId} name={eName}/>
         </div>}
     </div>
+
   );
 }
 
