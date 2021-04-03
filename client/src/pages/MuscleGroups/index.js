@@ -126,7 +126,7 @@ function Musclegroups() {
 
                   <div className=" icon btn btn-light bg-transparent border-0" eType={exercise.type} data-id={exercise._id} onClick={getExerciseId}>
                     <FontAwesome className="super-crazy-colors"
-                        name="folder-open"
+                        name="expand"
                         size="2x"
                         style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: "white" }}
                       />
@@ -183,7 +183,7 @@ function Musclegroups() {
 
                   <div className=" icon btn btn-light bg-transparent border-0" eType={exercise.type} data-id={exercise._id} onClick={getExerciseId}>
                     <FontAwesome className="super-crazy-colors"
-                        name="folder-open"
+                        name="expand"
                         size="2x"
                         style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: "white" }}
                       />
@@ -237,7 +237,7 @@ function Musclegroups() {
 
                   <div className=" icon btn btn-light bg-transparent border-0" eType={exercise.type} data-id={exercise._id} onClick={getExerciseId}>
                     <FontAwesome className="super-crazy-colors"
-                        name="folder-open"
+                        name="expand"
                         size="2x"
                         style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: "white" }}
                       />
@@ -291,7 +291,7 @@ function Musclegroups() {
 
                   <div className=" icon btn btn-light bg-transparent border-0" eType={exercise.type} data-id={exercise._id} onClick={getExerciseId}>
                     <FontAwesome className="super-crazy-colors"
-                        name="folder-open"
+                        name="expand"
                         size="2x"
                         style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: "white" }}
                       />
@@ -345,7 +345,7 @@ function Musclegroups() {
 
                   <div className=" icon btn btn-light bg-transparent border-0" eType={exercise.type} data-id={exercise._id} onClick={getExerciseId}>
                     <FontAwesome className="super-crazy-colors"
-                        name="folder-open"
+                        name="expand"
                         size="2x"
                         style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: "white" }}
                       />
@@ -399,7 +399,7 @@ function Musclegroups() {
 
                   <div className=" icon btn btn-light bg-transparent border-0" eType={exercise.type} data-id={exercise._id} onClick={getExerciseId}>
                     <FontAwesome className="super-crazy-colors"
-                        name="folder-open"
+                        name="expand"
                         size="2x"
                         style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: "white" }}
                       />
@@ -453,7 +453,7 @@ function Musclegroups() {
 
                   <div className=" icon btn btn-light bg-transparent border-0" eType={exercise.type} data-id={exercise._id} onClick={getExerciseId}>
                     <FontAwesome className="super-crazy-colors"
-                        name="folder-open"
+                        name="expand"
                         size="2x"
                         style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: "white" }}
                       />
