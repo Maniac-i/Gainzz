@@ -16,7 +16,7 @@ function Container() {
   const [eId, setEid] = useState('');
   const [viewDetails, setViewDetails] = useState();
   
- const user = (jwt_decode(localStorage.jwtToken));
+  const user = (jwt_decode(localStorage.jwtToken));
 
   //load all of the users exercises and store them with loadExercises
   useEffect(() => {
@@ -49,7 +49,7 @@ function Container() {
          : rows[rows.length-1].push(key)) && rows;
      }, []);
    
-}
+  }
 
   return (
     <div className="container">
@@ -90,8 +90,8 @@ function Container() {
             </ExerciseCard>
       
           </Col>
-        )
-)}
+          )
+          )}
         </Row>
          
       ))
@@ -100,8 +100,8 @@ function Container() {
         <div>
           <div className="btn btn-light" onClick={() => setViewDetails(false)}>Go Back</div>
           <ExerciseDetails id={eId}/>
-        </div>}
-    </div>
+          </div>}
+        </div>
   );
 }
 
