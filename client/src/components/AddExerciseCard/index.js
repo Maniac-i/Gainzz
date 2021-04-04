@@ -7,7 +7,7 @@ import "./style.css"
 function AddBtn(props) {
   return(
     
-<div className=" add-exercise card text-center mx-auto bg-transparent ">
+<div className=" add-exerciseBtn card text-center mx-auto bg-transparent ">
  
   <Link to='/create' className=" addbtn btn  text-white bg-transparent border-0">Add Exercise
       <FontAwesome

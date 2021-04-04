@@ -36,7 +36,7 @@ function AddDetailsForm(props) {
 
   return(
 
-<div className="card card-signup flex-row my-5">
+<div className="add-details card-signup flex-row my-5">
                         <div className="card-body" >
                         <form className="form-signin">
                             <div className="form-label-group">
@@ -56,9 +56,11 @@ function AddDetailsForm(props) {
                             <label htmlFor="inputPassword"></label>
                             </div>
             
-                            <button className="btn btn-lg btn-dark btn-block text-uppercase" 
+                            <div className="button-box col-lg-12">
+                            <button className="btn btn-outline-warning text-uppercase text-center text-dark " 
                             type="submit" onClick={handleSubmit}>Add Detail</button>
-                            <button className="d-block text-center mt-2 small" onClick={props.setAddDetail}>Nevermind</button>
+                            <button className=" btn btn-outline-danger " onClick={props.setAddDetail}>Cancel</button>
+                            </div>
                         </form>
                         </div>
                     </div>

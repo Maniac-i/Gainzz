@@ -29,6 +29,11 @@ const apiCalls = {
     return axios.post('/api/exercise', data)
   },
 
+  deleteExercise: function(id) {
+    console.log("HERE!")
+    return axios.delete('/api/exercise/' + id)
+  },
+
   //add a detail to an exercise
   addDetail: function(data) {
     return axios.post('/api/exercisedetails', data)
