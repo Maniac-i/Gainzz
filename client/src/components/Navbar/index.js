@@ -26,15 +26,6 @@ function Navbar() {
                       <span className="sr-only">(current)</span>
                     </Link>
                 </li>
-                <li className="nav-item dropdown">
-                  <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{color: "#fff"}}>
-                    My Gainzz
-                  </Link>
-                  <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <Link to="#" className="dropdown-item">Workouts</Link>
-                    <Link to="#" className="dropdown-item">Create Workout</Link>
-                  </div>
-                </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/signin" onClick={() => logout()}style={{color: "#fff"}}>Log Out</Link>
               </li>

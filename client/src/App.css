@@ -111,6 +111,7 @@ body {
   border: none;
   border-radius: 15px;
   
+  
 }
 
 .exercise .card-body{
@@ -118,19 +119,20 @@ body {
   border: none;
 }
 
-.exercise:hover{
-  transition: transform .2s;
-  transform: scale(1.2)
-}
-.add-exercise:hover{
+
+.add-exerciseBtn:hover{
   transition: transform .2s;
   transform: scale(1.1)
 }
 
-.add-exercise{
+.add-exerciseBtn{
   height: 80px;
   border: 0;
   box-shadow: 10px 10px 10px #333333;
+}
+
+.add-exercise{
+  width: 500px;
 }
 
 .bro {
@@ -141,6 +143,33 @@ body {
   height: 100px;
 }
 
+
+
+.button-box {
+  text-align:center;
+  margin-top:20px;
+}
+
+.add-details{
+  
+  width: 350px;
+  height: 320px;
+}
+
+.bro-card{
+  margin: 2px;
+
+}
+
+.deleteXbtn{
+  margin-top: 25px;
+}
+
+.deleteXbtn:hover{
+  transition: transform .2s;
+  transform: scale(1.1);
+  
+}
 
 
 

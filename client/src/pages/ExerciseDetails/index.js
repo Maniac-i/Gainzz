@@ -4,6 +4,8 @@ import API from "../../utils/API";
 import DetailsTable from '../../components/DetailsTable/index';
 import TableRow from '../../components/TableRow/index';
 import AddDetailsForm from '../../components/AddDetailsForm';
+import DeleteExercise from '../../components/DeleteExercise';
+
 var dayjs = require('dayjs');
 
 function Container(props) {
@@ -56,8 +58,11 @@ function Container(props) {
   return (
     <div>     
       <div className="details card text-center mx-auto border-0">
+        
         <div className="card-body bg-dark text-white">
+          
           <h3 style={{color: "#ffc107", marginTop: "15px"}}>{props.name}</h3>
+          
         </div>
       </div>
       <br/>
@@ -80,7 +85,9 @@ function Container(props) {
     <AddDetailsForm 
     id={props.id}
     setAddDetail={onClickSetAddDetails}/>
-}
+    
+}   
+  <DeleteExercise/>
   </div>
   )
 }

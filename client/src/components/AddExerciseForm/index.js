@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { useHistory, Link } from "react-router-dom";
 import API from '../../utils/API';
 import jwt_decode from "jwt-decode";
+import FontAwesome from 'react-fontawesome';
 
 function AddExerciseForm(props) {
 
@@ -38,20 +39,21 @@ function AddExerciseForm(props) {
 
 
   return (
-    <div className="card card-addexe ">
-      <div className="card-body">
+    <div className=" add-exercise card card-addexe ">
+      <div className="card-body mx-auto">
         <h5 className="card-title text-center">Add an Exercise</h5>
         <form className="form-signin">
           <label className="my-1 mr-2" htmlFor="inlineFormCustomSelectPref">
-            Select a Muscle Group
+            
           </label>
           <select
             className="custom-select my-1 mr-sm-2"
             id="inlineFormCustomSelectPref"
             value={value}
             onChange={onChange}
+            
           >
-            <option defaultValue>Select</option>
+            <option defaultValue disabled selected hidden>Select Muscle Group</option>
             <option value="chest">Chest</option>
             <option value="back">Back</option>
             <option value="biceps">Biceps</option>
@@ -80,12 +82,16 @@ function AddExerciseForm(props) {
             type="submit"
             onClick={handleSubmit}
           >
-            Add Exercise
+            Add
+            <FontAwesome
+            className="super-crazy-colors"
+            name="plus"
+            style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: "white" }}
+            />
           </button>
 
           <Link className="d-block text-center mt-2 small" to="/workouts">
             All Exercises
-
           </Link>
         </form>
       </div>
