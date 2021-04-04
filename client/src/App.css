@@ -151,9 +151,12 @@ body {
 }
 
 .add-details{
-  
+  border-radius: 15px;
   width: 350px;
   height: 320px;
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
 }
 
 .bro-card{
@@ -170,6 +173,7 @@ body {
   transform: scale(1.1);
   
 }
+
 
 
 
