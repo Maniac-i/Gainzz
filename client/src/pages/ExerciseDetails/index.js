@@ -62,7 +62,7 @@ function Container(props) {
         
         <div className="card-body bg-dark text-white">
           
-          <h3 style={{color: "#ffc107", marginTop: "15px"}}>{props.name}</h3>
+          <h3 style={{color: "#ffc107", marginTop: "15px", fontSize: "35px"}}>{props.name}</h3>
           
         </div>
       </div>
