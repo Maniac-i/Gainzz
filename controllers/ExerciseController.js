@@ -6,7 +6,12 @@ module.exports = {
   populate: function(req, res) {
     db.Exercise
       .find({_id: req.params.id})
-      .populate("exerciseDetails")
+      .populate({
+        path: "exerciseDetails",
+        options: {
+          sort: "-date"
+        }
+      })
       .then(dbResults => res.json(dbResults))
       .catch(err => res.status(404).json(err));
   },
