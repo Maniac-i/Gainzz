@@ -124,6 +124,7 @@ body {
   height: auto;
   border: none;
   border-radius: 15px;
+  box-shadow: 10px 10px 10px #333333;
   
   
 }
@@ -136,13 +137,13 @@ body {
 
 .add-exerciseBtn:hover{
   transition: transform .2s;
-  transform: scale(1.1)
+  transform: scale(1.03)
 }
 
 .add-exerciseBtn{
-  height: 80px;
+  height: 70px;
   border: 0;
-  box-shadow: 10px 10px 10px #333333;
+  
 }
 
 .add-exercise{
@@ -185,6 +186,12 @@ body {
 .deleteXbtn:hover{
   transition: transform .2s;
   transform: scale(1.1);
+  
+}
+
+.exercise:hover{
+  transition: transform .2s;
+  transform: scale(1.05);
   
 }
 

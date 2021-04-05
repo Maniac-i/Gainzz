@@ -13,7 +13,7 @@ function AddBtn(props) {
       <FontAwesome
       className="super-crazy-colors"
       name="plus"
-      style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: "white" }}
+      style={{  color: "white" }}
       />
   </Link>
   

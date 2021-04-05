@@ -15,12 +15,12 @@
   background-size: cover;
   margin: 20px;
   border-radius: 15px;
+  box-shadow: 10px 10px 10px #333333;
  
   
 }
 
 .cardlink:hover{
-  box-shadow: 10px 10px 10px #333333;
   transition: transform .3s;
   transform: scale(1.015)
 }
