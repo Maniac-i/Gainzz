@@ -1,16 +1,25 @@
-import React, {useState} from 'react';
+import React from 'react';
 import API from '../../utils/API';
+import { useHistory } from 'react-router-dom';
 
 function DeleteExercise(props) {
+
+  const history = useHistory();
+
+  function redirecttoAllExercises() {
+    history.push("/home");
+}
+
     function deleteExercise(e) {
       let id = e.target.getAttribute('id')
   
       API.deleteExercise(id)
         .then((res) => {
           console.log(res)
-          props.findAllByUserId(id)
+         redirecttoAllExercises();
         })
         .catch(err => console.log(err))
+
     }
     
   

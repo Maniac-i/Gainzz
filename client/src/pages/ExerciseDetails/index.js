@@ -88,7 +88,8 @@ function Container(props) {
     setAddDetail={onClickSetAddDetails}/>
     
 }   
-  <DeleteExercise/>
+  <DeleteExercise
+  id={props.id}/>
   </div>
   )
 }
