@@ -53,7 +53,7 @@ function AddExerciseForm(props) {
             onChange={onChange}
             
           >
-            <option defaultValue disabled selected hidden>Select Muscle Group</option>
+            <option defaultValue disabled hidden>Select Muscle Group</option>
             <option value="chest">Chest</option>
             <option value="back">Back</option>
             <option value="biceps">Biceps</option>
