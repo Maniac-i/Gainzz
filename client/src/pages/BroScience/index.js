@@ -30,9 +30,9 @@ function Broscience() {
       <Navbar/>
       <div className="container">
       <Jumbotron src={`${process.env.PUBLIC_URL}/headers/boHeader.png`} />
-    <Row>
+    <Row key={Math.random()}>
     {videos.map((video) => (
-      <Col size="md-3 xs-12 mx-auto">
+      <Col size="md-3 xs-12 mx-auto" key={Math.random()}>
         <BroCard
           videoId={video.id.videoId}
           title={video.snippet.title}

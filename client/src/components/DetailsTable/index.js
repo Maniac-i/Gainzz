@@ -12,7 +12,7 @@ import React from 'react';
       <th scope="col">Delete</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody className="tableBody">
     {props.children}
   </tbody>
 </table>
