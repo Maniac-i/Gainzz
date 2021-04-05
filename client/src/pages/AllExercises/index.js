@@ -8,7 +8,7 @@ import ExerciseDetails from '../ExerciseDetails/index';
 import jwt_decode from "jwt-decode";
 import { Row, Col } from "../../components/Grid"
 import AddBtn from '../../components/AddExerciseCard';
-import { Link } from 'react-router-dom';
+
 
 
 

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import { Col, Row, Container } from '../../components/Grid'
 import Navbar from '../../components/Navbar';
@@ -8,8 +9,7 @@ import ExerciseCard from "../../components/ExerciseCard/index";
 import API from "../../utils/API";
 import ExerciseDetails from '../ExerciseDetails/index';
 import jwt_decode from "jwt-decode";
-import AddBtn from '../../components/AddExerciseCard';
-import FontAwesome from 'react-fontawesome'
+import FontAwesome from 'react-fontawesome';
 
 
 
@@ -21,7 +21,10 @@ function Musclegroups() {
 
   const [exercises, setExercises] = useState([]);
   const [eId, setEid] = useState('');
-  const [viewDetails, setViewDetails] = useState();
+  const [eName, setEname] = useState('');
+  const [viewDetails, setViewDetails] = useState(false);
+  const [viewExercises, setViewExercises] = useState();
+  const [filtered, setFiltered] = useState([]);
 
   //load all of the users exercises and store them with loadExercises
   useEffect(() => {
@@ -30,7 +33,6 @@ function Musclegroups() {
 
   let id = user.id;
   function loadExercises() {
-    //remove and replace with user id number once signup/login works
 
     API.findAllByUserId(id)
       .then((res) => {
@@ -41,44 +43,30 @@ function Musclegroups() {
 
   function getExerciseId(e) {
     let id = e.target.getAttribute('data-id');
+    let name = e.currentTarget.getAttribute('data-name');
     setEid(id);
+    setEname(name)
 
     setViewDetails(true);
     
   }
-
-
-  //trying to get exercise to display only for its specific muscle group
-  const [eType, setEtype] = useState('');
-  const [eTypeChest, setEtypeChest] = useState();
-  const [eTypeShoulders, setEtypeShoulders] = useState();
-  const [eTypeBack, setEtypeBack] = useState();
-  const [eTypeBiceps, setEtypeBiceps] = useState();
-  const [eTypeTriceps, setEtypeTriceps] = useState();
-  const [eTypeLegs, setEtypeLegs] = useState();
-  const [eTypeCore, setEtypeCore] = useState();
   
   function getExerciseType(e) {
-    let type = e.target.getAttribute('eType');
-    setEtype(type);
-
-    //various muscle options
-    if (type === "chest") { setEtypeChest(true); }
-    if (type === "shoulders") { setEtypeShoulders(true); }
-    if (type === "back") { setEtypeBack(true); }
-    if (type === "biceps") { setEtypeBiceps(true); }
-    if (type === "triceps") { setEtypeTriceps(true); }
-    if (type === "legs") { setEtypeLegs(true); }
-    if (type === "core") { setEtypeCore(true); }
-
+    let type = e.currentTarget.getAttribute('data-type');
+    setViewExercises(true);
+    
+    console.log('type:', type);
+    let allExercises = [...exercises];
+    console.log('all:', allExercises)
+    let filteredExercises = allExercises.filter(exercise => exercise.type === type)
+    setFiltered(filteredExercises);
+    
   }
-
-
 
 
   let exerciseCols = []
   if (exercises.length>0) {
-    exerciseCols = exercises.reduce( (rows, key, index) =>{ 
+    exerciseCols = filtered.reduce( (rows, key, index) =>{ 
        return (index % 3 === 0 ? rows.push([key]) 
          : rows[rows.length-1].push(key)) && rows;
      }, []);
@@ -86,16 +74,19 @@ function Musclegroups() {
   }
 
   
-
-
-  
     return (
       <div className="container">
         <Container>
           <Navbar/>
+        {viewExercises && !viewDetails ? 
+        <div className="btn btn-light" onClick={() => setViewExercises(false)}>Go Back</div>
+      : <div></div>}
   
+  {!viewExercises ?
+  <div>
           <Row>
             <Col size="lg-12 xl-12 mx-auto">
+              <div onClick={getExerciseType} data-type='chest'>
                 <CardLink onClick={getExerciseType}
                 link="muscle"
                 title="Chest"
@@ -103,112 +94,26 @@ function Musclegroups() {
                         background: `url(${process.env.PUBLIC_URL}/musclegroups/chestIMG.jpg`, 
                         backgroundPosition: 'center', 
                         backgroundSize: "cover"}}/>
+              </div>
             </Col>
           </Row>
 
-
-
-        {!viewDetails ?
-          exerciseCols.map((row) => (
-
-            <Row>
-              {row.map (exercise => (
-                <Col size="md-4 xs-12 mx-auto">
-              
-                
-                {(exercise.type == "chest") ?
-                <ExerciseCard
-                  exercisename={exercise.name}
-                  exercisetype={exercise.type}
-                  userId={exercise.userId}
-                  key={exercise._id}
-                  id={exercise._id}>
-
-                  <div className=" icon btn btn-light bg-transparent border-0" eType={exercise.type} data-id={exercise._id} onClick={getExerciseId}>
-                    <FontAwesome className="super-crazy-colors"
-                        name="folder-open"
-                        size="2x"
-                        style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: "white" }}
-                      />
-                  </div>
-
-                </ExerciseCard>
-                :
-                <div></div>
-                }
-          
-
-              </Col> 
-              )
-              )}
-            </Row> 
-          ))
-          :
-            <div>
-              <div className="btn btn-light" onClick={() => setViewDetails(false)}>Go Back</div>
-              <ExerciseDetails id={eId}/>
-            </div>
-        }
-
-        
-
-
-
           <Row> 
             <Col size="lg-12 xl-12 mx-auto">
+            <div onClick={getExerciseType} data-type='shoulders'>
                 <CardLink
                 link="muscle" 
                 title="Shoulders"
                 style={{ 
                     background: `url(${process.env.PUBLIC_URL}/musclegroups/shouldersIMG.jpg)`, 
                     backgroundPosition: 'center'}}/>
+            </div>
             </Col>
           </Row>
-
-          {!viewDetails ?
-          exerciseCols.map((row) => (
-
-            <Row>
-              {row.map (exercise => (
-                <Col size="md-4 xs-12 mx-auto">
-              
-                
-                {(exercise.type == "shoulders") ?
-                <ExerciseCard
-                  exercisename={exercise.name}
-                  exercisetype={exercise.type}
-                  userId={exercise.userId}
-                  key={exercise._id}
-                  id={exercise._id}>
-
-                  <div className=" icon btn btn-light bg-transparent border-0" eType={exercise.type} data-id={exercise._id} onClick={getExerciseId}>
-                    <FontAwesome className="super-crazy-colors"
-                        name="folder-open"
-                        size="2x"
-                        style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: "white" }}
-                      />
-                  </div>
-
-                </ExerciseCard>
-                :
-                <div></div>
-                }
-          
-
-              </Col> 
-              )
-              )}
-            </Row> 
-          ))
-          :
-            <div>
-              <div className="btn btn-light" onClick={() => setViewDetails(false)}>Go Back</div>
-              <ExerciseDetails id={eId}/>
-            </div>
-        }
   
           <Row> 
             <Col size="lg-12 xl-12 mx-auto">
+            <div onClick={getExerciseType} data-type='back'>
                 <CardLink
                 link="muscle" 
                 title="Back"
@@ -216,53 +121,13 @@ function Musclegroups() {
                     background: `url(${process.env.PUBLIC_URL}/musclegroups/backIMG.jpg)`, 
                     backgroundPosition: 'center', 
                     backgroundSize: "cover"}}/>
+              </div>
             </Col>
           </Row>
 
-          {!viewDetails ?
-          exerciseCols.map((row) => (
-
-            <Row>
-              {row.map (exercise => (
-                <Col size="md-4 xs-12 mx-auto">
-              
-                
-                {(exercise.type == "back") ?
-                <ExerciseCard
-                  exercisename={exercise.name}
-                  exercisetype={exercise.type}
-                  userId={exercise.userId}
-                  key={exercise._id}
-                  id={exercise._id}>
-
-                  <div className=" icon btn btn-light bg-transparent border-0" eType={exercise.type} data-id={exercise._id} onClick={getExerciseId}>
-                    <FontAwesome className="super-crazy-colors"
-                        name="folder-open"
-                        size="2x"
-                        style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: "white" }}
-                      />
-                  </div>
-
-                </ExerciseCard>
-                :
-                <div></div>
-                }
-          
-
-              </Col> 
-              )
-              )}
-            </Row> 
-          ))
-          :
-            <div>
-              <div className="btn btn-light" onClick={() => setViewDetails(false)}>Go Back</div>
-              <ExerciseDetails id={eId}/>
-            </div>
-        }
-
           <Row> 
             <Col size="lg-12 xl-12 mx-auto">
+            <div onClick={getExerciseType} data-type='biceps'>
                 <CardLink
                 link="muscle" 
                 title="Biceps"
@@ -270,53 +135,13 @@ function Musclegroups() {
                     background: `url(${process.env.PUBLIC_URL}/musclegroups/bicepsIMG.jpg)`, 
                     backgroundPosition: 'center', 
                     backgroundSize: "cover"}}/>
+            </div>
             </Col>
           </Row>
 
-          {!viewDetails ?
-          exerciseCols.map((row) => (
-
-            <Row>
-              {row.map (exercise => (
-                <Col size="md-4 xs-12 mx-auto">
-              
-                
-                {(exercise.type == "biceps") ?
-                <ExerciseCard
-                  exercisename={exercise.name}
-                  exercisetype={exercise.type}
-                  userId={exercise.userId}
-                  key={exercise._id}
-                  id={exercise._id}>
-
-                  <div className=" icon btn btn-light bg-transparent border-0" eType={exercise.type} data-id={exercise._id} onClick={getExerciseId}>
-                    <FontAwesome className="super-crazy-colors"
-                        name="folder-open"
-                        size="2x"
-                        style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: "white" }}
-                      />
-                  </div>
-
-                </ExerciseCard>
-                :
-                <div></div>
-                }
-          
-
-              </Col> 
-              )
-              )}
-            </Row> 
-          ))
-          :
-            <div>
-              <div className="btn btn-light" onClick={() => setViewDetails(false)}>Go Back</div>
-              <ExerciseDetails id={eId}/>
-            </div>
-        }
-
           <Row> 
             <Col size="lg-12 xl-12 mx-auto">
+            <div onClick={getExerciseType} data-type='triceps'>
                 <CardLink
                 link="muscle" 
                 title="Triceps"
@@ -324,53 +149,13 @@ function Musclegroups() {
                     background: `url(${process.env.PUBLIC_URL}/musclegroups/tricepsIMG.jpg)`, 
                     backgroundPosition: 'center', 
                     backgroundSize: "cover"}}/>
+              </div>
             </Col>
           </Row>
 
-          {!viewDetails ?
-          exerciseCols.map((row) => (
-
-            <Row>
-              {row.map (exercise => (
-                <Col size="md-4 xs-12 mx-auto">
-              
-                
-                {(exercise.type == "triceps") ?
-                <ExerciseCard
-                  exercisename={exercise.name}
-                  exercisetype={exercise.type}
-                  userId={exercise.userId}
-                  key={exercise._id}
-                  id={exercise._id}>
-
-                  <div className=" icon btn btn-light bg-transparent border-0" eType={exercise.type} data-id={exercise._id} onClick={getExerciseId}>
-                    <FontAwesome className="super-crazy-colors"
-                        name="folder-open"
-                        size="2x"
-                        style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: "white" }}
-                      />
-                  </div>
-
-                </ExerciseCard>
-                :
-                <div></div>
-                }
-          
-
-              </Col> 
-              )
-              )}
-            </Row> 
-          ))
-          :
-            <div>
-              <div className="btn btn-light" onClick={() => setViewDetails(false)}>Go Back</div>
-              <ExerciseDetails id={eId}/>
-            </div>
-        }
-
           <Row> 
             <Col size="lg-12 xl-12 mx-auto">
+            <div onClick={getExerciseType} data-type='legs'>
                 <CardLink
                 link="muscle" 
                 title="Legs"
@@ -378,53 +163,13 @@ function Musclegroups() {
                     background: `url(${process.env.PUBLIC_URL}/musclegroups/legsIMG.jpg)`, 
                     backgroundPosition: 'center', 
                     backgroundSize: "cover"}}/>
+            </div>
             </Col>
           </Row>
 
-          {!viewDetails ?
-          exerciseCols.map((row) => (
-
-            <Row>
-              {row.map (exercise => (
-                <Col size="md-4 xs-12 mx-auto">
-              
-                
-                {(exercise.type == "legs") ?
-                <ExerciseCard
-                  exercisename={exercise.name}
-                  exercisetype={exercise.type}
-                  userId={exercise.userId}
-                  key={exercise._id}
-                  id={exercise._id}>
-
-                  <div className=" icon btn btn-light bg-transparent border-0" eType={exercise.type} data-id={exercise._id} onClick={getExerciseId}>
-                    <FontAwesome className="super-crazy-colors"
-                        name="folder-open"
-                        size="2x"
-                        style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: "white" }}
-                      />
-                  </div>
-
-                </ExerciseCard>
-                :
-                <div></div>
-                }
-          
-
-              </Col> 
-              )
-              )}
-            </Row> 
-          ))
-          :
-            <div>
-              <div className="btn btn-light" onClick={() => setViewDetails(false)}>Go Back</div>
-              <ExerciseDetails id={eId}/>
-            </div>
-        }
-
           <Row> 
             <Col size="lg-12 xl-12 mx-auto">
+            <div onClick={getExerciseType} data-type='core'>
                 <CardLink
                 link="muscle" 
                 title="Core"
@@ -432,18 +177,19 @@ function Musclegroups() {
                     background: `url(${process.env.PUBLIC_URL}/musclegroups/coreIMG.jpg)`, 
                     backgroundPosition: 'center',
                     backgroundSize: "cover"}}/>
+            </div>
             </Col>
           </Row>
+          </div>
+          : <div></div>}
 
-          {!viewDetails ?
+          {viewExercises && !viewDetails ?
           exerciseCols.map((row) => (
 
             <Row>
               {row.map (exercise => (
                 <Col size="md-4 xs-12 mx-auto">
-              
-                
-                {(exercise.type == "core") ?
+            
                 <ExerciseCard
                   exercisename={exercise.name}
                   exercisetype={exercise.type}
@@ -451,19 +197,15 @@ function Musclegroups() {
                   key={exercise._id}
                   id={exercise._id}>
 
-                  <div className=" icon btn btn-light bg-transparent border-0" eType={exercise.type} data-id={exercise._id} onClick={getExerciseId}>
+                  <div className=" icon btn btn-light bg-transparent border-0" data-id={exercise._id} data-name={exercise.name} onClick={getExerciseId}>
                     <FontAwesome className="super-crazy-colors"
+                    data-id={exercise._id} data-name={exercise.name} onClick={getExerciseId}
                         name="folder-open"
                         size="2x"
                         style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: "white" }}
                       />
                   </div>
-
                 </ExerciseCard>
-                :
-                <div></div>
-                }
-          
 
               </Col> 
               )
@@ -471,12 +213,16 @@ function Musclegroups() {
             </Row> 
           ))
           :
-            <div>
-              <div className="btn btn-light" onClick={() => setViewDetails(false)}>Go Back</div>
-              <ExerciseDetails id={eId}/>
-            </div>
-        }
+          <div></div>
+          }
 
+          {viewDetails ? 
+          <div>
+          <div className="btn btn-light" onClick={() => setViewDetails(false)}>Go Back</div>
+          <ExerciseDetails id={eId} name={eName}/>
+        </div>
+        :
+        <div></div>}
         </Container>
         
       </div>
