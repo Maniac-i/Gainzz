@@ -3,6 +3,7 @@
 #root {
   height: 100%;
   flex-grow: 1;
+  
 }
 
 :root {
@@ -195,7 +196,11 @@ body {
   
 }
 
+tr:first-child {
+  color: #ffc107!important
+}
 
 
-
-
+tr{
+  font-size: 28px;
+}
