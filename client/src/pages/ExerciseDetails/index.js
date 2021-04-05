@@ -22,6 +22,7 @@ function Container(props) {
   
   if (allDetails) {
   date = dayjs(detail.date).format('MM/DD/YYYY');
+  // eslint-disable-next-line no-unused-vars
   } else { date = ""}
 
   useEffect(() => {

@@ -8,7 +8,7 @@ import ExerciseDetails from '../ExerciseDetails/index';
 import jwt_decode from "jwt-decode";
 import { Row, Col } from "../../components/Grid"
 import AddBtn from '../../components/AddExerciseCard';
-import { Link } from 'react-router-dom';
+
 
 
 
@@ -76,7 +76,9 @@ function Container() {
           {row.map (exercise => (
             <Col size="md-4 xs-12 mx-auto">
           
-            <Link onClick={getExerciseId} data-id={exercise._id} data-name={exercise.name}>
+
+            <div onClick={getExerciseId} data-id={exercise._id} data-name={exercise.name}>
+
             <ExerciseCard
               exercisename={exercise.name}
               exercisetype={exercise.type}
@@ -84,7 +86,9 @@ function Container() {
               key={exercise._id}
               id={exercise._id}>
             </ExerciseCard>
-            </Link>
+
+            </div>
+
       
           </Col>
           )
