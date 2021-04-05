@@ -28,7 +28,8 @@ function Broscience() {
   return(
     <div>
       <Navbar/>
-    <Jumbotron src={`${process.env.PUBLIC_URL}/headers/boHeader.png`} />
+      <div className="container">
+      <Jumbotron src={`${process.env.PUBLIC_URL}/headers/boHeader.png`} />
     <Row>
     {videos.map((video) => (
       <Col size="md-3 xs-12 mx-auto">
@@ -42,6 +43,7 @@ function Broscience() {
         </Col>
       ))}
       </Row>
+      </div>
     </div>
 
   )

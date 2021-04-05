@@ -52,7 +52,7 @@ function Container() {
     exerciseCols = exercises.reduce( (rows, key, index) =>{ 
        return (index % 3 === 0 ? rows.push([key]) 
          : rows[rows.length-1].push(key)) && rows;
-     }, []);
+    }, []);
    
   }
 
@@ -61,7 +61,7 @@ function Container() {
       <Navbar/>
       {!viewDetails ?
       <div className="header">
-      <Jumbotron src={`${process.env.PUBLIC_URL}/headers/aeHeader.png`} /> 
+      
       <AddBtn/>
       </div>
       
@@ -76,7 +76,9 @@ function Container() {
           {row.map (exercise => (
             <Col size="md-4 xs-12 mx-auto">
           
+
             <div onClick={getExerciseId} data-id={exercise._id} data-name={exercise.name}>
+
             <ExerciseCard
               exercisename={exercise.name}
               exercisetype={exercise.type}
@@ -84,7 +86,9 @@ function Container() {
               key={exercise._id}
               id={exercise._id}>
             </ExerciseCard>
+
             </div>
+
       
           </Col>
           )
