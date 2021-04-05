@@ -71,12 +71,12 @@ function Container() {
       {!viewDetails ?
       exerciseCols.map((row) => (
 
-        <Row>
+        <Row key={Math.random()}>
           {row.map (exercise => (
-            <Col size="md-4 xs-12 mx-auto">
+            <Col size="md-4 xs-12 mx-auto" key={Math.random()}>
           
 
-            <div onClick={getExerciseId} data-id={exercise._id} data-name={exercise.name}>
+            <div onClick={getExerciseId} data-id={exercise._id} data-name={exercise.name} key={exercise.id}>
 
             <ExerciseCard
               exercisename={exercise.name}

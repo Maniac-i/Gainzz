@@ -3,7 +3,8 @@ import DeleteButton from '../DeleteButton/index';
 
 function TableRow(props) {
   return(
-    <tr style={{}}>
+
+    <tr>
       <th scope="row">{props.date}</th>
       <td>{props.sets}</td>
       <td>{props.reps}</td>

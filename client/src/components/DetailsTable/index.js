@@ -12,7 +12,7 @@ import React from 'react';
       <th scope="col" style={{color: "white", fontSize: "20px"}}></th>
     </tr>
   </thead>
-  <tbody>
+  <tbody className="tableBody">
     {props.children}
   </tbody>
 </table>
