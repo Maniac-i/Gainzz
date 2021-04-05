@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import ExerciseCard from "../../components/ExerciseCard/index";
-import Jumbotron from "../../components/Jumbotron/index";
 import Navbar from '../../components/Navbar';
 import API from "../../utils/API";
 import ExerciseDetails from '../ExerciseDetails/index';

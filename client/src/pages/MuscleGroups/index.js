@@ -9,7 +9,7 @@ import ExerciseCard from "../../components/ExerciseCard/index";
 import API from "../../utils/API";
 import ExerciseDetails from '../ExerciseDetails/index';
 import jwt_decode from "jwt-decode";
-import FontAwesome from 'react-fontawesome';
+
 
 
 
