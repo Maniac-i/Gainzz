@@ -1,14 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 
+#root {
+  height: 100%;
+  flex-grow: 1;
+}
+
 :root {
   --input-padding-x: 1.5rem;
   --input-padding-y: .75rem;
+  height: 100%;
+  flex-grow: 1;
 }
 
 body {
   font-family: 'Josefin Sans', sans-serif;
   background: #5f6975;
+  flex-grow: 1;
+  height: 100%;
   
+}
+
+.appDiv {
+  height: 100%;
+  flex-grow: 1;
 }
 
 .jumbotron{

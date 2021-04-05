@@ -19,7 +19,7 @@ function App() {
 
   return (
     <Router>
-      <div>
+      <div className='appDiv'>
         <Switch>
           <Route exact path="/" component={SignUp}/>
           <Route exact path="/signin" component={SignIn}/>
