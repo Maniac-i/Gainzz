@@ -76,7 +76,7 @@ function Container() {
           {row.map (exercise => (
             <Col size="md-4 xs-12 mx-auto">
           
-            <a onClick={getExerciseId} data-id={exercise._id} data-name={exercise.name}>
+            <div onClick={getExerciseId} data-id={exercise._id} data-name={exercise.name}>
             <ExerciseCard
               exercisename={exercise.name}
               exercisetype={exercise.type}
@@ -84,7 +84,7 @@ function Container() {
               key={exercise._id}
               id={exercise._id}>
             </ExerciseCard>
-            </a>
+            </div>
       
           </Col>
           )

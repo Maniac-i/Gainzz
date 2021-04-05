@@ -42,7 +42,7 @@ function Musclegroups() {
   }
 
   function getExerciseId(e) {
-    let id = e.target.getAttribute('data-id');
+    let id = e.currentTarget.getAttribute('data-id');
     let name = e.currentTarget.getAttribute('data-name');
     setEid(id);
     setEname(name)
@@ -190,22 +190,15 @@ function Musclegroups() {
               {row.map (exercise => (
                 <Col size="md-4 xs-12 mx-auto">
             
-                <ExerciseCard
-                  exercisename={exercise.name}
-                  exercisetype={exercise.type}
-                  userId={exercise.userId}
-                  key={exercise._id}
-                  id={exercise._id}>
-
-                  <div className=" icon btn btn-light bg-transparent border-0" data-id={exercise._id} data-name={exercise.name} onClick={getExerciseId}>
-                    <FontAwesome className="super-crazy-colors"
-                    data-id={exercise._id} data-name={exercise.name} onClick={getExerciseId}
-                        name="folder-open"
-                        size="2x"
-                        style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color: "white" }}
-                      />
-                  </div>
-                </ExerciseCard>
+            <div onClick={getExerciseId} data-id={exercise._id} data-name={exercise.name}>
+            <ExerciseCard
+              exercisename={exercise.name}
+              exercisetype={exercise.type}
+              userId={exercise.userId}
+              key={exercise._id}
+              id={exercise._id}>
+            </ExerciseCard>
+            </div>
 
               </Col> 
               )
